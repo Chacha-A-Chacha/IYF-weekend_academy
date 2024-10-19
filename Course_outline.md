@@ -8,9 +8,9 @@
   - Resource: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn)
 
 - **Lesson 2: Introduction to Linux and Command Line Basics**
-  - Overview of Linux operating systems
+  - [Overview of Linux operating systems](https://www.javatpoint.com/what-is-linux)
   - Basic Linux commands (navigating directories, file management)
-  - Resource: Linux Command Line Basics
+  - Resource: [Linux Command Line Basics](https://linuxcommand.org/index.php)
 
 - **Lesson 3: HTML Basics**
   - Understanding HTML syntax
