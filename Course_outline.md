@@ -5,7 +5,7 @@
 - **Lesson 1: Introduction to Web Development**
   - Overview of web development (front-end vs back-end)
   - Understanding the web stack (HTML, CSS, JavaScript, server-side languages)
-  - Resource: MDN Web Docs
+  - Resource: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn)
 
 - **Lesson 2: Introduction to Linux and Command Line Basics**
   - Overview of Linux operating systems
