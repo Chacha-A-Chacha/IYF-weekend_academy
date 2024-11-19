@@ -1,6 +1,9 @@
 
 # School Timetable Implementation Guide
 
+![School Timetable](timetable_photo.jpeg "2024/2025 School Timetable")
+
+
 ## Objective
 Recreate the 2024/2025 academic year timetable as shown in the image using HTML and CSS. Ensure the final files are properly organized for submission.
 
