@@ -50,9 +50,9 @@
   - Resource: JavaScript Advanced Concepts
 
 - **Lesson 10: Introduction to Front-End Frameworks**
-  - Overview of popular frameworks (React, Vue, Angular)
-  - Setting up a project with a chosen framework (e.g., React)
-  - Resource: React Docs
+  - Overview of popular frameworks ([React](https://react.dev/learn), Vue, Angular)
+  - Setting up a project with a chosen framework (e.g., [React](https://react.dev/learn))
+  - Resource: [React Docs](https://react.dev/learn)
 
 - **Lesson 11: State Management in Front-End Frameworks**
   - Understanding state and props in React
