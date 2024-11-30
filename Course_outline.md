@@ -48,6 +48,7 @@
 - **Lesson 9: Advanced JavaScript Concepts**
   - Understanding scope, closures, and [asynchronous JavaScript](https://www.freecodecamp.org/news/asynchronous-javascript-explained/) (callbacks, promises)
   - Resource: [JavaScript Advanced Concepts](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)
+  - Resource: [Whats is Callbacks, Closure, Promises, and Async & Await](https://medium.com/@punitkmr/whats-is-callbacks-closure-promises-and-async-await-a8d47eb83862)
 
 - **Lesson 10: Introduction to Front-End Frameworks**
   - Overview of popular frameworks ([React](https://react.dev/learn), Vue, Angular)
