@@ -159,6 +159,6 @@ SOFTWARE.
 5. Document your implementation in the README
 
 ## Submission
-Submit a zip file containing all required files or provide a GitHub repository link.
+submit a GitHub repository link.
 
 Good luck!
