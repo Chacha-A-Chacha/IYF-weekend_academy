@@ -13,10 +13,10 @@
   - Resource: [Linux Command Line Basics](https://linuxcommand.org/index.php)
 
 - **Lesson 3: HTML Basics**
-  - Understanding HTML syntax
-  - Common HTML tags and attributes
+  - [Understanding HTML syntax](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax)
+  - [Common HTML tags and attributes](https://www.tutorialspoint.com/html/html_attributes.htm)
   - Creating a simple HTML page
-  - Resource: HTML Basics
+  - Resource: [HTML Basics](https://www.w3schools.com/html/html_basic.asp)
 
 - **Lesson 4: CSS Basics**
   - Introduction to CSS and its role in web development
