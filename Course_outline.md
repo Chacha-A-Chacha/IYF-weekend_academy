@@ -19,8 +19,8 @@
   - Resource: [HTML Basics](https://www.w3schools.com/html/html_basic.asp)
 
 - **Lesson 4: CSS Basics**
-  - Introduction to CSS and its role in web development
-  - Selectors, properties, and values
+  - [Introduction to CSS and its role in web development](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS)
+  - [Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors), [properties, and values](https://www.dofactory.com/css/properties)
   - Resource: CSS Basics
 
 #### Week 3-4: Advanced HTML, CSS, and Introduction to JavaScript
