@@ -25,9 +25,9 @@
 
 #### Week 3-4: Advanced HTML, CSS, and Introduction to JavaScript
 - **Lesson 5: More HTML Tags**
-  - Semantic HTML for better structure
-  - Forms and input elements
-  - Resource: HTML Forms
+  - [Semantic HTML for better structure](https://www.semrush.com/blog/semantic-html5-guide/?msockid=1524f322ba22661314a9e785bb2267fd)
+  - [Forms and input elements](https://www.w3schools.com/html/html_form_elements.asp)
+  - Resource: [HTML Forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms)
 
 - **Lesson 6: Advanced CSS Techniques**
   - Box model, positioning, and layout techniques
