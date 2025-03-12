@@ -30,14 +30,14 @@
   - Resource: [HTML Forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms)
 
 - **Lesson 6: Advanced CSS Techniques**
-  - Box model, positioning, and layout techniques
-  - Flexbox and CSS Grid for responsive design
-  - Resource: CSS Box Model, CSS Flexbox, CSS Grid
+  - [Box model, positioning, and layout techniques](https://cssdojo.dev/learn/basics/the-box-model-and-layouts)
+  - [Flexbox and CSS Grid for responsive design](https://www.freecodecamp.org/news/web-layouts-use-css-grid-and-flex-to-create-responsive-webpages/)
+  - Resource: [CSS Box Model](https://www.learn-html-css.com/learn-to-code-css/css-box-model/), [CSS Flexbox](https://www.learn-html-css.com/learn-to-code-css/css-flexbox/), [CSS Grid](https://www.learn-html-css.com/learn-to-code-css/css-grid/)
 
 - **Lesson 7: Introduction to JavaScript**
   - Variables, data types, and operators
   - Basic control structures (if statements, loops)
-  - Resource: JavaScript Basics
+  - Resource: [JavaScript Basics]()
 
 - **Lesson 8: Functions and DOM Manipulation**
   - Writing and calling functions
@@ -48,7 +48,7 @@
 - **Lesson 9: Advanced JavaScript Concepts**
   - Understanding scope, closures, and [asynchronous JavaScript](https://www.freecodecamp.org/news/asynchronous-javascript-explained/) (callbacks, promises)
   - Resource: [JavaScript Advanced Concepts](https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript)
-  - Resource: [Whats is Callbacks, Closure, Promises, and Async & Await](https://medium.com/@punitkmr/whats-is-callbacks-closure-promises-and-async-await-a8d47eb83862)
+  - Resource: [What is Callbacks, Closure, Promises, and Async & Await](https://medium.com/@punitkmr/whats-is-callbacks-closure-promises-and-async-await-a8d47eb83862)
 
 - **Lesson 10: Introduction to Front-End Frameworks**
   - Overview of popular frameworks ([React](https://react.dev/learn), Vue, Angular)
