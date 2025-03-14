@@ -147,4 +147,176 @@ Semantic HTML:
 </nav>
 ```
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms Lesson</title>
+    <style>
+        /* Basic styling to make the form more readable */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        fieldset {
+            margin-bottom: 20px;
+            padding: 20px;
+        }
 
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section with main title and introduction -->
+    <header>
+        <h1>Learn HTML Forms</h1>
+        <p>Welcome to our comprehensive guide on HTML forms and input elements.</p>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <!-- Article containing the form tutorial -->
+        <article>
+            <!-- Section for the actual form demonstration -->
+            <section>
+                <h2>Registration Form Example</h2>
+                
+                <!-- The form element with proper attributes -->
+                <form action="/submit" method="POST" id="registrationForm">
+                    
+                    <!-- Personal Information fieldset -->
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        
+                        <!-- Text input examples -->
+                        <div class="form-group">
+                            <label for="fullname">Full Name:</label>
+                            <!-- The required attribute makes this field mandatory -->
+                            <input type="text" id="fullname" name="fullname" required 
+                                   placeholder="Enter your full name">
+                        </div>
+
+                        <!-- Email input demonstration -->
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <!-- Type email provides email validation -->
+                            <input type="email" id="email" name="email" required 
+                                   placeholder="your@email.com">
+                        </div>
+
+                        <!-- Date input example -->
+                        <div class="form-group">
+                            <label for="birthdate">Date of Birth:</label>
+                            <input type="date" id="birthdate" name="birthdate">
+                        </div>
+                    </fieldset>
+
+                    <!-- Account Details fieldset -->
+                    <fieldset>
+                        <legend>Account Details</legend>
+
+                        <!-- Password input demonstration -->
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <!-- Pattern attribute ensures password strength -->
+                            <input type="password" id="password" name="password" 
+                                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                   required>
+                        </div>
+
+                        <!-- Number input example -->
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" name="age" min="18" max="120">
+                        </div>
+                    </fieldset>
+
+                    <!-- Preferences fieldset -->
+                    <fieldset>
+                        <legend>Preferences</legend>
+
+                        <!-- Radio buttons example -->
+                        <div class="form-group">
+                            <p>Preferred Contact Method:</p>
+                            <input type="radio" id="contactEmail" name="contact" value="email">
+                            <label for="contactEmail">Email</label>
+
+                            <input type="radio" id="contactPhone" name="contact" value="phone">
+                            <label for="contactPhone">Phone</label>
+                        </div>
+
+                        <!-- Checkbox example -->
+                        <div class="form-group">
+                            <p>Interests:</p>
+                            <input type="checkbox" id="coding" name="interests" value="coding">
+                            <label for="coding">Coding</label>
+
+                            <input type="checkbox" id="design" name="interests" value="design">
+                            <label for="design">Design</label>
+                        </div>
+
+                        <!-- Select dropdown example -->
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <select id="country" name="country">
+                                <option value="">Select a country</option>
+                                <optgroup label="North America">
+                                    <option value="us">United States</option>
+                                    <option value="ca">Canada</option>
+                                </optgroup>
+                                <optgroup label="Europe">
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="fr">France</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <!-- Textarea example -->
+                        <div class="form-group">
+                            <label for="bio">Bio:</label>
+                            <textarea id="bio" name="bio" rows="4" cols="50" 
+                                    placeholder="Tell us about yourself..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- File upload example -->
+                    <fieldset>
+                        <legend>Profile Picture</legend>
+                        <div class="form-group">
+                            <label for="profile">Upload Picture:</label>
+                            <input type="file" id="profile" name="profile" 
+                                   accept="image/*">
+                        </div>
+                    </fieldset>
+
+                    <!-- Form submission buttons -->
+                    <div class="form-group">
+                        <button type="submit">Submit Form</button>
+                        <button type="reset">Reset Form</button>
+                    </div>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>This is a demonstration of HTML form elements and semantic HTML structure.</p>
+    </footer>
+</body>
+</html>
+```
