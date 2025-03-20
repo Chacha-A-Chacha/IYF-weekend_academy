@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="device-width" initial-scale="1.0">
+
+        <style>
+            .parent {
+                width: 50;
+                height: auto;
+                background-color: aqua;
+                position: relative;
+        
+            }
+        
+            .box_1 {
+                width: 50px;
+                height: 100px;
+                background-color: blue;
+                margin: 40px;
+                padding: 80px;
+                border: 4px solid red;
+        
+        
+            }
+        
+            .box_2 {
+                width: 140px;
+                height: 70px;
+                background-color: green;
+                margin: 40px;
+                padding: 80px;
+                border: 4px solid rgb(53, 26, 26);
+        
+            }
+        
+            .back {
+                position: absolute;
+                z-index: 1;
+            }
+        
+            .front {
+                position: absolute;
+                z-index: 2;
+                /* Higher z-index appears in front */
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="parent"> 
+                <div class="box_1 front"></div>
+                <div class="box_2 back"></div>
+            </div>
+        </section>
+    </body>
+</html>
