@@ -67,7 +67,7 @@ firstName_lastName/
    │
    ├── index.html      # Main HTML file
    ├── style.css       # CSS stylesheet
-   ├── README.txt      # Brief description of the project and accessibility considerations
+   ├── README.md      # Brief description of the project and accessibility considerations
    └── timetable_preview.png # Screenshot of your timetable
 ```
 
