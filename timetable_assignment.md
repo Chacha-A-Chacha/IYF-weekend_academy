@@ -7,7 +7,7 @@
 ---
 
 ### **Objective**
-Recreate the 2024/2025 academic year timetable as shown in the image using HTML and CSS. Ensure the final files are properly organized for submission. This assignment is designed to test your knowledge of HTML tables, CSS styling, and accessibility.
+Recreate the 2024/2025 academic year timetable using HTML and CSS, as shown in the image. Ensure the final files are properly organized for submission. This assignment is designed to test your knowledge of HTML tables, CSS styling, and accessibility.
 
 ---
 
@@ -145,7 +145,7 @@ The assignment will be graded based on the following criteria. Points are alloca
 - Proper organization of files:
   - `index.html`
   - `style.css`
-  - `README.txt`
+  - `README.md`
   - `timetable_preview.png`
 - Submission in a zipped folder named correctly (e.g., `Martin_Maina.zip`).
 
