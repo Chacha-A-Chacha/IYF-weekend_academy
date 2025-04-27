@@ -59,3 +59,23 @@ Refactor the application into separate modules as shown earlier in this part of 
 One best practice is to commit your code every time it is in a stable state. This makes it easy to rollback to a situation where the application still works.
 
 If you're having issues with *content.body* being *undefined* for seemingly no reason, make sure you didn't forget to add *app.use(express.json())* near the top of the file.
+
+
+### Final Steps and Testing
+
+Start the server with  `npm run dev`
+Test the API with Postman or VS Code REST client:
+
+GET request to http://localhost:3003/api/blogs
+POST request to http://localhost:3003/api/blogs with a JSON body like:
+```JSON
+json{
+  "title": "Test Blog",
+  "author": "Test Author",
+  "url": "http://testblog.com",
+  "likes": 5
+}
+
+```
+
+If you're using MongoDB Atlas instead of a local MongoDB, make sure to update the MONGODB_URI in your .env file with the correct connection string from Atlas.
