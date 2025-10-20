@@ -228,6 +228,46 @@ Recreate the provided LG (desktop) design with perfect layout accuracy while dem
      - MD breakpoint implementation
      - SM breakpoint implementation
      - Lighthouse scores
+    
+## **Git Commit History Requirements**
+
+### **Continuous Development Documentation**
+Your Git commit history serves as proof of your development journey and will be thoroughly reviewed as part of the grading process. 
+
+**Required Commit Patterns:**
+- **Daily/Regular Commits**: Demonstrate consistent work progress throughout the project timeline
+- **Incremental Changes**: Each commit should represent logical, incremental progress (e.g., "Add Header component", "Implement responsive navigation", "Update color system")
+- **Meaningful Messages**: Clear, descriptive commit messages that explain what was changed and why
+- **Reasonable Commit Size**: Commits should contain related changes only, not entire features or sections at once
+
+** Academic Integrity Warning:**
+- Git histories showing irregular patterns such as:
+  - Entire project uploaded in 1-3 commits
+  - Suspiciously large commits with unrelated changes
+  - All commits occurring within a 24-48 hour period before deadline
+  - Evidence of force-pushed or rewritten history to hide work patterns
+  - Commits with timestamps that don't align with actual development time
+  
+  **Will be flagged for academic review and may result in:**
+  - Automatic 50% grade reduction
+  - Requirement to explain your development process in person
+  - Potential course failure for confirmed plagiarism/contract cheating
+
+**Expected Commit Frequency:**
+- Minimum 3-4 commits per week over the project duration
+- At least 30-40 meaningful commits for the entire project
+- Natural progression visible (setup → components → styling → content → refinement)
+
+**Example of Acceptable Commit History:**
+```
+Day 1-3: Initial setup, Tailwind configuration
+Day 4-7: Header and navigation components
+Day 8-10: Hero section implementation
+Day 11-14: Feature cards and responsive behavior
+[Continue with steady progress...]
+```
+
+Remember: Your commit history tells the story of your learning and problem-solving journey. Authentic work naturally produces frequent, incremental commits as you test, debug, and refine your code.
 
 ---
 
