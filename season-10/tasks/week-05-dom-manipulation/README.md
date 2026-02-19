@@ -1,5 +1,11 @@
 # Week 5: DOM Manipulation
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-05-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll learn to make your pages interactive! You'll select elements, respond to user actions, and dynamically update the page content.
 

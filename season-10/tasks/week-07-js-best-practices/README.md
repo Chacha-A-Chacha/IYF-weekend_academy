@@ -1,5 +1,11 @@
 # Week 7: JavaScript Best Practices
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-07-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll learn to persist data, structure larger applications, and write professional-quality code. You'll also refactor your previous projects.
 

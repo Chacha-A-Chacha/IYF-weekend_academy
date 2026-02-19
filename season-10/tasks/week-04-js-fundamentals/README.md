@@ -1,5 +1,11 @@
 # Week 4: JavaScript Fundamentals
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-04-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll begin your JavaScript journey, learning the core concepts that power interactive websites. Focus on understanding how JavaScript thinks.
 

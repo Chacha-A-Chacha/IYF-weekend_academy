@@ -1,5 +1,11 @@
 # Week 6: Asynchronous JavaScript
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-06-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll master asynchronous programming - the key to working with APIs, handling user interactions, and building modern web applications.
 

@@ -1,5 +1,11 @@
 # Week 12: Deployment & Final Project
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-12-{your-github-username}` (or team repository for final project)
+
+---
+
 ## Overview
 This is the final week! You'll deploy your full-stack CommunityHub application and present it. Everything you've learned comes together.
 

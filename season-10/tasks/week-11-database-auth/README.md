@@ -1,5 +1,11 @@
 # Week 11: Database Integration & Authentication
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-11-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll connect your API to a real database and implement user authentication. Your CommunityHub will have persistent data and user accounts.
 

@@ -1,5 +1,11 @@
 # Week 2: CSS Mastery
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-02-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll transform your HTML portfolio into a beautifully styled, responsive website. By the end, your portfolio will look professional on any device.
 

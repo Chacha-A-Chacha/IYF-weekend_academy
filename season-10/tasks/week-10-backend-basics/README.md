@@ -1,5 +1,9 @@
 # Week 10: Backend Basics - Node.js & Express
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-10-{your-github-username}`
 
+---
 ## Overview
 This week you'll build your first backend server! You'll create RESTful APIs that power web applications, learning the server side of full-stack development.
 

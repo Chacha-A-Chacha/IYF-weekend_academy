@@ -1,5 +1,11 @@
 # Week 1: Web Foundations
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-01-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll build and deploy your first website. By the end of the week, you'll have a live personal portfolio page.
 

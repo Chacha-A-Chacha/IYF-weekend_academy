@@ -1,5 +1,11 @@
 # Week 3: Tools & Workflow
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-03-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll master the command line and Git, essential tools for every professional developer. By the end, you'll manage your projects like a pro.
 

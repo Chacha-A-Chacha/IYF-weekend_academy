@@ -1,5 +1,11 @@
 # Week 8: React Fundamentals
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-08-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll learn React - the most popular library for building user interfaces. Your JavaScript skills will directly translate, making React feel natural.
 

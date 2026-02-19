@@ -10,6 +10,7 @@ This folder contains practical tasks organized by week. Each week includes:
 
 ```
 tasks/
+├── SUBMISSION_GUIDELINES.md     # ⚠️ READ THIS FIRST
 ├── week-01-web-foundations/     # HTML basics, environment setup
 ├── week-02-css-mastery/         # CSS fundamentals, layouts
 ├── week-03-tools-workflow/      # Command line, Git & GitHub
@@ -37,12 +38,15 @@ tasks/
 - 🟡 **Intermediate** - Apply concepts with less guidance
 - 🔴 **Challenge** - Solve problems independently
 
-## Submission Guidelines
+## 📋 Submission Guidelines
 
-1. Create a branch for each week: `week-01-yourname`
-2. Complete all required tasks
-3. Push to GitHub before next lesson
-4. Be ready for code review discussion
+**Read the full [Submission Guidelines](SUBMISSION_GUIDELINES.md)** before submitting any work.
+
+Key points:
+- **Repository naming:** `iyf-s10-week-{number}-{your-github-username}`
+- **Required files:** README.md (all projects), CONTRIBUTORS.md (team projects)
+- **Team projects:** Use Pull Requests - contributions must be verifiable on GitHub
+- **Submit:** Repository URL to Google Classroom
 
 ---
 

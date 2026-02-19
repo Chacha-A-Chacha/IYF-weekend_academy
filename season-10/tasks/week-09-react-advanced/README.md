@@ -1,5 +1,11 @@
 # Week 9: React Advanced
 
+> 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
+>
+> **Repository Name:** `iyf-s10-week-09-{your-github-username}`
+
+---
+
 ## Overview
 This week you'll learn advanced React patterns including effects, data fetching, routing, and styling. Your CommunityHub will become a multi-page app with real data.
 
