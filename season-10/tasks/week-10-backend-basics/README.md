@@ -535,7 +535,7 @@ app.post('/api/posts', validatePost, (req, res) => {
 **Exercise: Modular Project Structure**
 
 ```
-community-hub-api/
+iyf-s10-week-10-yourusername/
 ├── src/
 │   ├── routes/
 │   │   ├── posts.js
