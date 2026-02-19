@@ -12,16 +12,6 @@
 
 > *"The best way to learn web development is to build websites."*
 
-### **Key Differences from Previous Seasons**
-| Aspect | Season 9 | Season 10 |
-|--------|----------|-----------|
-| Project approach | Multiple small projects | One evolving flagship project |
-| JavaScript time | 2 weeks | 4 weeks (deeper fundamentals) |
-| Framework choice | React only | Vanilla JS mastery → React |
-| Backend focus | Both Express & Flask | Express deep-dive (focus beats sprawl) |
-| Practice | Weekly projects | Daily 30-min coding challenges |
-| Code quality | Basic | Code reviews, debugging, documentation |
-
 ---
 
 ## **The Flagship Project: "CommunityHub"**
