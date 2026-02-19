@@ -9,8 +9,8 @@ iyf-s10-week-{number}-{your-github-username}
 ```
 
 **Examples:**
-- `iyf-s10-week-01-johndoe`
-- `iyf-s10-week-05-janedoe`
+- `iyf-s10-week-01-MaisoriKitayama`
+- `iyf-s10-week-05-MaisoriKitayama`
 
 For team projects, use the team lead's username:
 ```
@@ -42,7 +42,7 @@ Your README must include these sections:
 
 ## Author
 - **Name:** Your Full Name
-- **GitHub:** [@yourusername](https://github.com/yourusername)
+- **GitHub:** [@MaisoriKitayama](https://github.com/MaisoriKitayama)
 - **Date:** Month Day, Year
 
 ## Project Description
@@ -91,25 +91,25 @@ For team projects, create a `CONTRIBUTORS.md` file:
 
 | Name | GitHub | Role | Contributions |
 |------|--------|------|---------------|
-| John Doe | [@johndoe](https://github.com/johndoe) | Team Lead | Setup, Header component, API integration |
-| Jane Smith | [@janesmith](https://github.com/janesmith) | Developer | Footer, Forms, Styling |
-| Bob Wilson | [@bobwilson](https://github.com/bobwilson) | Developer | Navigation, Routing |
+| Maisori Kitayama | [@MaisoriKitayama](https://github.com/MaisoriKitayama) | Team Lead | Setup, Header component, API integration |
+| Team Member 2 | [@teammate2](https://github.com/teammate2) | Developer | Footer, Forms, Styling |
+| Team Member 3 | [@teammate3](https://github.com/teammate3) | Developer | Navigation, Routing |
 
 ## Contribution Breakdown
 
-### John Doe
+### Maisori Kitayama
 - Set up project structure
 - Created header component
 - Implemented API calls
 - Code review for all PRs
 
-### Jane Smith
+### Team Member 2
 - Built footer component
 - Styled all forms
 - Added responsive design
 - Wrote documentation
 
-### Bob Wilson
+### Team Member 3
 - Created navigation menu
 - Set up React Router
 - Fixed accessibility issues
@@ -225,7 +225,7 @@ Docs: add installation instructions to README
 ### Step 3: Submit to Google Classroom
 - Copy your repository URL
 - Submit the link in Google Classroom assignment
-- **Format:** `https://github.com/username/iyf-s10-week-XX-username`
+- **Format:** `https://github.com/MaisoriKitayama/iyf-s10-week-XX-MaisoriKitayama`
 
 ### Step 4: Verify Submission
 - Click your submitted link
