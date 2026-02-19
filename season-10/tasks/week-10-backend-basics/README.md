@@ -25,12 +25,15 @@ This week you'll build your first backend server! You'll create RESTful APIs tha
 # Check Node.js is installed
 node --version
 
-# Create a new directory
-mkdir community-hub-api
-cd community-hub-api
+# Create your week-10 repository folder
+mkdir iyf-s10-week-10-yourusername
+cd iyf-s10-week-10-yourusername
 
 # Initialize npm project
 npm init -y
+
+# Initialize git
+git init
 ```
 
 Create `hello.js`:

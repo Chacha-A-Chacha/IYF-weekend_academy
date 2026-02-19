@@ -22,17 +22,25 @@ This week you'll learn React - the most popular library for building user interf
 ### Task 15.1: Setting Up React with Vite 🟢
 **Time:** 30 minutes
 
-**Create your first React project:**
+**Create your React project (this will be your week-08 repository):**
 
 ```bash
-# Create new Vite project with React
-npm create vite@latest community-hub -- --template react
+# Create new Vite project - use the repo naming convention!
+npm create vite@latest iyf-s10-week-08-yourusername -- --template react
 
 # Navigate to project
-cd community-hub
+cd iyf-s10-week-08-yourusername
 
 # Install dependencies
 npm install
+
+# Initialize git and push to GitHub
+git init
+git add .
+git commit -m "Initial commit: React project setup"
+# Create repo on GitHub, then:
+git remote add origin https://github.com/yourusername/iyf-s10-week-08-yourusername.git
+git push -u origin main
 
 # Start development server
 npm run dev
@@ -40,7 +48,7 @@ npm run dev
 
 **Explore the project structure:**
 ```
-community-hub/
+iyf-s10-week-08-yourusername/
 ├── public/              # Static files
 ├── src/
 │   ├── App.jsx          # Main component

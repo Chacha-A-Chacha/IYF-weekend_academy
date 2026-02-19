@@ -220,10 +220,10 @@ git config --list
 
 **Exercise: Initialize Repository**
 ```bash
-# Navigate to your portfolio
-cd portfolio
+# Navigate to your week-01 project (already cloned)
+cd iyf-s10-week-01-yourusername
 
-# Initialize Git
+# Initialize Git (if not already done)
 git init
 
 # Check status
@@ -302,8 +302,8 @@ Connect your local repository to GitHub.
 
 **Exercise 1: Push to GitHub**
 ```bash
-# Add remote repository
-git remote add origin https://github.com/yourusername/portfolio.git
+# Add remote repository (if not already connected)
+git remote add origin https://github.com/yourusername/iyf-s10-week-03-yourusername.git
 
 # Verify remote
 git remote -v
@@ -321,7 +321,7 @@ git push -u origin main
 
 ```bash
 # Clone
-git clone https://github.com/yourusername/portfolio.git portfolio-clone
+git clone https://github.com/yourusername/iyf-s10-week-03-yourusername.git week03-clone
 
 # After making changes elsewhere, pull them
 git pull origin main
@@ -351,22 +351,22 @@ Thumbs.db
 ### Task 6.4: Professional README 🔴
 **Time:** 45 minutes
 
-Create a professional README for your portfolio.
+Create a professional README for your week-03 repository.
 
 **Requirements:**
 
 ```markdown
-# Your Name - Portfolio
+# Your Name - Week 03 Project
 
-Brief description of your portfolio and what it showcases.
+Brief description of your project and what you learned this week.
 
 ## Live Demo
 
-[View Live Site](https://yourusername.github.io/portfolio)
+[View Live Site](https://yourusername.github.io/iyf-s10-week-03-yourusername)
 
 ## Screenshot
 
-![Portfolio Screenshot](./images/screenshot.png)
+![Project Screenshot](./images/screenshot.png)
 
 ## Features
 
@@ -384,7 +384,7 @@ Brief description of your portfolio and what it showcases.
 ## Project Structure
 
 \`\`\`
-portfolio/
+iyf-s10-week-03-yourusername/
 ├── index.html
 ├── about.html
 ├── projects.html

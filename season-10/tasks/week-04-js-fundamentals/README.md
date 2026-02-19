@@ -22,9 +22,9 @@ This week you'll begin your JavaScript journey, learning the core concepts that 
 ### Task 7.1: JavaScript Setup & Variables 🟢
 **Time:** 30 minutes
 
-**Setup your JS environment:**
+**Setup your JS environment in your week-04 repository:**
 
-1. Create a new folder `week-04-js`
+1. Clone or create your repository: `iyf-s10-week-04-{your-username}`
 2. Create `index.html`:
 ```html
 <!DOCTYPE html>
