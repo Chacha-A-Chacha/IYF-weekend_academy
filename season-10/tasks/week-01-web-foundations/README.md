@@ -29,17 +29,10 @@ Complete the following setup checklist:
   - [ ] Live Server
   - [ ] Prettier - Code formatter
   - [ ] HTML CSS Support
-  - [ ] Auto Rename Tag
 - [ ] Install Google Chrome or Firefox (for DevTools)
 - [ ] Create a GitHub account (if you don't have one)
 - [ ] Install Git from [git-scm.com](https://git-scm.com/)
-- [ ] Create a folder structure for the course:
-  ```
-  IYF-season10/
-  ├── week-01/
-  ├── week-02/
-  └── ...
-  ```
+- [ ] Create your first week's repository: `iyf-s10-week-01-{your-github-username}`
 
 **Verification:** Take a screenshot of VS Code with extensions installed.
 
@@ -103,11 +96,11 @@ Include these elements:
 ### Task 1.4: Deploy to GitHub Pages 🟡
 **Time:** 30 minutes
 
-1. Create a new repository on GitHub called `portfolio`
+1. Use your week-01 repository: `iyf-s10-week-01-{your-username}`
 2. Push your `index.html` to the repository
 3. Enable GitHub Pages (Settings → Pages → Source: main branch)
 4. Wait 1-2 minutes for deployment
-5. Access your live site at `https://yourusername.github.io/portfolio`
+5. Access your live site at `https://yourusername.github.io/iyf-s10-week-01-yourusername`
 
 **Submission:** Share your live URL with the instructor.
 
@@ -202,10 +195,10 @@ Audit your `index.html` page for accessibility:
 ### Task 2.4: Multi-Page Portfolio Structure 🔴
 **Time:** 60 minutes
 
-Expand your portfolio to multiple pages:
+Expand your week-01 repository to include multiple pages:
 
 ```
-portfolio/
+iyf-s10-week-01-yourusername/
 ├── index.html       (Home page)
 ├── about.html       (About me page)
 ├── projects.html    (Projects showcase)
