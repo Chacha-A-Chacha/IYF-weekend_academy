@@ -708,6 +708,8 @@ Final testing, bug fixes, and prepare your presentation.
 - [ ] Prepare presentation
 - [ ] Practice demo
 - [ ] Present final project
+- [ ] (Team) `CONTRIBUTORS.md` reflects each member's verified work
+- [ ] Each member documented their CommunityHub contribution in their individual portfolio
 
 **You did it! 🎉 You've built a full-stack web application!**
 

@@ -888,14 +888,16 @@ Interactive React UIs are easy to make inaccessible. Audit your CommunityHub fro
    - Create Post (form)
    - About
 
-2. **Features:**
+2. **Features (MVP):**
    - React Router navigation
    - Fetch posts from JSONPlaceholder API
-   - Search/filter posts
    - Create new post (local state)
-   - Like posts
    - Loading states
    - Error handling
+
+   **Stretch (optional — after the MVP works):**
+   - Search/filter posts
+   - Like posts
 
 3. **Components:**
    - Header with navigation
