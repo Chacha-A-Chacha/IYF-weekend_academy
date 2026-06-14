@@ -417,6 +417,32 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
+### Collaborative Task: Pair Collaboration Lab 🔴
+**Time:** 60 minutes · 👥 Work with a partner
+
+Practice the real team workflow you'll use for CommunityHub — two people, one shared repo.
+
+**Setup:**
+1. One partner creates a repo `iyf-s11-week-03-pair-{lead-username}` and adds the other as a collaborator
+2. Both clone it
+3. The lead enables branch protection on `main` (Settings → Branches → require a PR + 1 approval) — see [Submission Guidelines](../SUBMISSION_GUIDELINES.md)
+
+**Each partner:**
+- [ ] Create your own feature branch (`git checkout -b feature/your-name`)
+- [ ] Add a section to a shared `index.html` (e.g. your own profile card)
+- [ ] Push your branch and open a **Pull Request**
+- [ ] **Review and approve your partner's PR** (leave at least one comment)
+- [ ] Merge after approval
+
+**Then, together — resolve a conflict:**
+- [ ] Both edit the *same line* of `README.md` on separate branches
+- [ ] Open both PRs; the second will conflict
+- [ ] Resolve the merge conflict and complete the merge
+
+**Deliverable:** a repo with **2 merged PRs** and **1 resolved merge conflict**, both partners showing under Insights → Contributors.
+
+---
+
 ## Daily Challenges
 
 ### Day 1: Terminal-Only Project Setup 🟢

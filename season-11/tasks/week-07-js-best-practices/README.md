@@ -695,7 +695,57 @@ npm install prettier --save-dev
 
 ---
 
-### Code Review Session 🔴
+### Task 14.5: Your First Unit Tests 🔴
+**Time:** 45 minutes
+
+Add automated tests to one of your projects. We'll use **Vitest** (fast, minimal config, Jest-compatible API) — but **any test runner is fine: Jest, Node's built-in `node:test`, etc.** The concepts are identical.
+
+**Set up Vitest:**
+```bash
+npm install --save-dev vitest
+```
+Add to `package.json`:
+```json
+{
+  "scripts": {
+    "test": "vitest"
+  }
+}
+```
+
+**Test pure functions.** Extract a pure function from a past project into its own module, then test it:
+```js
+// format.js
+export function formatPrice(cents) {
+  return `$${(cents / 100).toFixed(2)}`;
+}
+```
+```js
+// format.test.js
+import { describe, it, expect } from 'vitest';
+import { formatPrice } from './format.js';
+
+describe('formatPrice', () => {
+  it('formats whole dollars', () => {
+    expect(formatPrice(500)).toBe('$5.00');
+  });
+  it('handles zero', () => {
+    expect(formatPrice(0)).toBe('$0.00');
+  });
+});
+```
+
+**Your tasks:**
+- [ ] Install a test runner (Vitest recommended; Jest or `node:test` accepted)
+- [ ] Extract at least 2 pure functions into their own module
+- [ ] Write at least 4 tests, including one edge case (empty / invalid input)
+- [ ] Run `npm test` and make them all pass
+
+> Prefer Jest? Swap `vitest` for `jest` — the `describe / it / expect` API is the same.
+
+---
+
+### Collaborative Task: Peer Code Review 🔴
 **Time:** 60 minutes
 
 **Peer Review Checklist:**
@@ -728,12 +778,14 @@ npm install prettier --save-dev
 - [ ] Proper indentation
 - [ ] Meaningful comments (when needed)
 
-**Review Process:**
+**Review Process (on GitHub):**
 1. Pair up with another student
-2. Exchange your To-Do List projects
-3. Use the checklist above
-4. Write constructive feedback
-5. Discuss findings together
+2. Open a **Pull Request** against your partner's To-Do List repo (a small improvement, or a `REVIEW.md` with your notes)
+3. Use the checklist above to leave **inline review comments** on their code
+4. The author responds with follow-up commits addressing the feedback
+5. Approve and merge once addressed
+
+> Verifiable collaboration: your review comments and the author's response commits both show on GitHub.
 
 ---
 

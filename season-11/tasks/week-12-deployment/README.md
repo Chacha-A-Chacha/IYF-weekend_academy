@@ -17,6 +17,28 @@ This is the final week! You'll deploy your full-stack CommunityHub application a
 
 ---
 
+## Project Scope — MVP vs Stretch
+
+Your final is graded on a **working, deployed MVP**. Build the MVP first; stretch goals are bonus only.
+
+**MVP (required):**
+- User registration & login (auth)
+- User profiles
+- Create and read posts
+- Comments on posts
+- Responsive design
+- Deployed (frontend + backend live)
+
+**Stretch (optional — only after the MVP works):**
+- Search & filtering
+- Likes / reactions
+- Image uploads
+- Real-time updates
+
+> A finished, deployed MVP beats an unfinished ambitious app.
+
+---
+
 ## Lesson 23 Tasks
 
 ### Task 23.1: Connect React to API 🟡

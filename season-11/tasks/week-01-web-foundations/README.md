@@ -233,6 +233,22 @@ iyf-s11-week-01-yourusername/
 
 ---
 
+### Task 2.5: Technical Article — Semantic HTML & Accessibility 🟡
+**Time:** 45 minutes · **Due:** end of Week 2
+
+Turn your accessibility audit (Task 2.3) into a short public post on **Dev.to**, **LinkedIn**, or **Medium**.
+
+**Your article should:**
+- [ ] Explain what semantic HTML is and why it matters
+- [ ] Show a **before/after** snippet (non-semantic vs semantic)
+- [ ] Describe 2–3 accessibility issues you found and how you fixed them
+- [ ] Link your deployed portfolio
+- [ ] Be 300–600 words, with code in code blocks
+
+**Submission:** add the article URL to your week-01 README.
+
+---
+
 ## Daily Challenges
 
 ### Day 1: Five Tags Challenge 🟢

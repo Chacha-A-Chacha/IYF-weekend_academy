@@ -1,4 +1,4 @@
-# Week 11: Database Integration & Authentication
+# Week 11: Databases (SQL & NoSQL) & Authentication
 
 > 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
 >
@@ -438,6 +438,39 @@ router.delete('/:postId/comments/:commentId', commentsController.deleteComment);
 
 ---
 
+### Task 21.5: SQL Fundamentals (SQLite) 🟡
+**Time:** 45 minutes
+
+CommunityHub uses MongoDB (NoSQL), but most jobs also expect **SQL**. This is a standalone exercise to get hands-on with a relational database — no server needed, SQLite runs from a single file.
+
+**Set up** (pick one): `npm install better-sqlite3`, the [SQLite CLI](https://www.sqlite.org/cli.html), or practice interactively on [SQLBolt](https://sqlbolt.com/).
+
+**Build a tiny `posts` table and query it:**
+```sql
+CREATE TABLE posts (
+  id      INTEGER PRIMARY KEY,
+  author  TEXT NOT NULL,
+  title   TEXT NOT NULL,
+  likes   INTEGER DEFAULT 0
+);
+
+INSERT INTO posts (author, title, likes) VALUES
+  ('maisori', 'Hello SQL', 3),
+  ('amina',   'Joins are fun', 7),
+  ('maisori', 'Second post', 1);
+```
+
+**Your tasks:**
+- [ ] Create the table and insert at least 3 rows
+- [ ] `SELECT` all posts ordered by `likes` (descending)
+- [ ] `SELECT` only posts by one author (`WHERE`)
+- [ ] Add a `users` table and write one `JOIN` linking posts to users
+- [ ] In your README, write 2–3 sentences: when would you choose SQL over NoSQL?
+
+**Reference:** [SQLBolt](https://sqlbolt.com/) · [SQLite docs](https://www.sqlite.org/docs.html)
+
+---
+
 ## Lesson 22 Tasks
 
 ### Task 22.1: User Model 🟢
@@ -844,6 +877,22 @@ const getAllPosts = async (req, res, next) => {
     }
 };
 ```
+
+---
+
+### Task 22.5: Security Hardening 🟡
+**Time:** 30 minutes
+
+Lock down the API basics before it goes near real users.
+
+**Your tasks:**
+- [ ] **Validate input** on registration/login (required fields, valid email, min password length) and return clear `400` errors
+- [ ] **Keep secrets out of code** — move your JWT secret and DB URI into a `.env` file, load with `dotenv`, and add `.env` to `.gitignore` (never commit it)
+- [ ] **Hash passwords, never store plaintext** (confirm bcrypt from Task 22.1)
+- [ ] **Don't leak details** — return a generic "invalid credentials" on login failure (don't reveal which field was wrong)
+- [ ] Escape/sanitize any user content rendered back, to avoid stored XSS
+
+**Reference:** [OWASP Top 10](https://owasp.org/www-project-top-ten/) · [OWASP Auth Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
 ---
 

@@ -853,6 +853,29 @@ function Input({
 
 ---
 
+### Task 18.4: Accessibility Audit 🟡
+**Time:** 30 minutes
+
+Interactive React UIs are easy to make inaccessible. Audit your CommunityHub frontend and fix what you find.
+
+**Run the audit:**
+- [ ] Open Chrome DevTools → **Lighthouse** → run an **Accessibility** report
+- [ ] Note your starting score
+
+**Check and fix:**
+- [ ] Every interactive element is reachable and usable by **keyboard** (Tab / Enter)
+- [ ] All form inputs have associated `<label>`s
+- [ ] Buttons and links have descriptive text (not "click here")
+- [ ] Images have `alt` text
+- [ ] Color contrast meets AA (Lighthouse flags failures)
+- [ ] Focus is visible on interactive elements
+
+**Submission:** record your before/after Lighthouse accessibility score in your README.
+
+**Reference:** [React: Accessibility](https://react.dev/learn/accessibility) · [WebAIM Checklist](https://webaim.org/standards/wcag/checklist)
+
+---
+
 ### Mini-Project: Complete CommunityHub Frontend 🔴
 **Time:** 120 minutes
 

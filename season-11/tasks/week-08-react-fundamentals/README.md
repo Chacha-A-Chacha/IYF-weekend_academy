@@ -17,6 +17,26 @@ This week you'll learn React - the most popular library for building user interf
 
 ---
 
+## 🏁 Flagship Kickoff — Team Setup
+
+CommunityHub is a **team project** (2–3 people) built from this week through Week 12. Set up the team before you start coding.
+
+**One-time setup (do this first):**
+- [ ] Form a team of 2–3
+- [ ] Team lead creates the team repo `iyf-s11-week-08-team-{lead-username}` and adds members as collaborators
+- [ ] Lead enables branch protection on `main` (require a PR + 1 approval) — see [Submission Guidelines](../SUBMISSION_GUIDELINES.md)
+- [ ] Add `CONTRIBUTORS.md` listing each member, their GitHub, and their features
+- [ ] Open a **GitHub Issue for each MVP feature**: profiles, posts, comments, auth
+
+**How you work from here (Weeks 8–12):**
+- Every member **owns at least one MVP feature** end-to-end
+- All work goes through **feature branch → Pull Request → teammate review → merge** (never push to `main`)
+- Contributions are graded **per author** (Insights → Contributors, PR authorship)
+
+> Keep building your **individual portfolio repo** too — document your CommunityHub contributions there as your personal showcase.
+
+---
+
 ## Lesson 15 Tasks
 
 ### Task 15.1: Setting Up React with Vite 🟢
@@ -717,6 +737,8 @@ function PostCard({ post, onLike }) {
 
 ### Mini-Project: CommunityHub Frontend 🔴
 **Time:** 120 minutes
+
+> **👥 Team build:** split these components across the team — each member owns ≥1 via a feature branch + PR (see Flagship Kickoff above).
 
 **Build the basic structure of CommunityHub in React:**
 

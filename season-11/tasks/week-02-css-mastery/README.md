@@ -3,6 +3,8 @@
 > 📋 **Before You Start:** Read the [Submission Guidelines](../SUBMISSION_GUIDELINES.md) for repository naming, README requirements, and how to submit.
 >
 > **Repository Name:** `iyf-s11-week-02-{your-github-username}`
+>
+> 📝 **Due this week:** your Week 1 technical article (*Semantic HTML & Accessibility*) — see Week 1, Task 2.5.
 
 ---
 
