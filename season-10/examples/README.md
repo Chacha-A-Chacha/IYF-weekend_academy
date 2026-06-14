@@ -2,6 +2,77 @@
 
 This folder contains complete, working example projects that demonstrate concepts from the course.
 
+---
+
+## Weather App
+
+**Location:** `weather-app/`
+
+A minimal weather search application that demonstrates **Lesson 12: Working with APIs**.
+
+### Quick Start
+
+1. Open `index.html` in a browser
+2. Enter a city name and click Search
+3. See real weather data from OpenWeatherMap API
+
+**Optional:** Get your own free API key from [OpenWeatherMap](https://openweathermap.org/api) and replace `API_KEY` in `main.js`.
+
+### What You'll Learn
+
+- **Fetching data:** `fetch()` to request data from an API
+- **Async/await:** Using modern syntax to handle async operations
+- **Error handling:** `try/catch` to handle network and parsing errors
+- **DOM updates:** Dynamically display API response data
+- **State management:** Show/hide loading and error states
+- **Event handling:** Form submission triggers the fetch
+
+### Code Walkthrough
+
+#### HTML
+- Form with city input
+- Divs for loading, error, and weather display
+- Simple semantic structure
+
+#### CSS
+- Clean, minimal styling
+- Responsive design
+- State classes (`.hidden`)
+
+#### JavaScript
+The entire app is ~90 lines:
+1. `fetchWeather(city)` - makes the API request
+2. `displayWeather(data)` - updates DOM with response
+3. Error handling - shows user-friendly messages
+4. Event listener - calls fetch when form submitted
+
+### Key Pattern: Try/Catch Async
+
+```javascript
+async function fetchWeather(city) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('City not found');
+        const data = await response.json();
+        displayWeather(data);
+    } catch (err) {
+        showError(err.message);
+    } finally {
+        hideLoading();
+    }
+}
+```
+
+This pattern appears in almost every real API call.
+
+### Resources
+
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- [MDN: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [JavaScript.info: Fetch](https://javascript.info/fetch)
+
+---
+
 ## To-Do List Application
 
 **Location:** `to-do-list/`
