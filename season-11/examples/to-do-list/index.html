@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>My To-Do List</h1>
+            <p class="subtitle">Built with DOM manipulation & event listeners</p>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Total:</span>
+                <span class="stat-value" id="totalCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Active:</span>
+                <span class="stat-value" id="activeCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Completed:</span>
+                <span class="stat-value" id="completedCount">0</span>
+            </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input
+                type="text"
+                id="taskInput"
+                class="task-input"
+                placeholder="Add a new task..."
+                autocomplete="off"
+            >
+            <button id="addTaskBtn" class="btn btn-primary">Add Task</button>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-section">
+            <button class="filter-btn filter-btn-active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Task List -->
+        <ul class="task-list" id="taskList">
+            <!-- Tasks will be added here by JavaScript -->
+        </ul>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <p>No tasks yet. Add one to get started!</p>
+        </div>
+
+        <!-- Clear Completed Button -->
+        <div class="actions">
+            <button id="clearCompletedBtn" class="btn btn-secondary">Clear Completed</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
