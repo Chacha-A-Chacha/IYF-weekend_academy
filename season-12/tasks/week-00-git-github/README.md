@@ -21,12 +21,15 @@ Everything in Weeks 1–12 depends on this week. A student the course cannot ide
 ## Task 0.1: Register 🟢
 **Time:** 5 minutes
 
-Fill in the **Season 12 registration form** (link posted in Google Classroom):
+Do **Task 0.3 first** (lock your GitHub username), then fill in the **Season 12 registration form** (link posted in Google Classroom). **Sign in with the Google account you'll use for Classroom all season** — the form records that account's email automatically.
 
-- Admission number
+You'll need:
+
+- Your admission number (4 digits, including any leading zeros) — entered twice
 - Your name exactly as registered with the school
-- The Google Classroom email you will submit from
-- Your GitHub username (see Task 0.3 before you fill this in)
+- Whether you've ever used another Google account for IYF Classroom, and which
+- Your GitHub username, exactly as in `github.com/<username>`
+- The email on your GitHub account (GitHub → Settings → Emails) — the same one you put in `git config` in Task 0.2
 
 **Rules:**
 - One Google Classroom account per student, for the whole season. Work split across two accounts is graded as one account.
@@ -140,7 +143,7 @@ Week 8 opens with one issue per MVP feature. This is that habit.
 - [ ] One merge conflict resolved
 - [ ] You appear in Insights → Contributors
 - [ ] ≥2 issues each, board exists, ≥1 issue closed via `Closes #n`
-- [ ] Profile README links to: Pages site, `markdown-practice.md`, team repo
+- [ ] Profile README has **Links** (Pages site, `markdown-practice.md`) and **Week 0 Team** (teammates, team repo, my PR, PR I reviewed, conflict PR, my issues, `Closes #n` PR)
 
 ---
 
@@ -148,7 +151,12 @@ Week 8 opens with one issue per MVP feature. This is that habit.
 
 Submit **one URL** in the Week 0 assignment's link field: your GitHub profile, `https://github.com/{your-github-username}`.
 
-Everything else is reached from there — your profile README must link to your Pages site, your `markdown-practice.md`, and the team repository. Anything not linked from your profile is not marked.
+Everything else is reached from there. Your profile README must have a **Links** section and a **Week 0 Team** section:
+
+- **Links:** your Pages site · your `markdown-practice.md`
+- **Week 0 Team:** your teammates' GitHub usernames · the team repo · **the PR you opened** · **the PR you reviewed** · **the merge-conflict PR** · **your two issues** · **the PR that closed an issue with `Closes #n`**
+
+Every item is a full link. The marker follows these links and checks each was authored by your account — it does **not** search the team repo for you. Anything not linked from your profile is not marked. Your teammates each list their own; yours tell your story, not theirs.
 
 **What scores 0:** a file attachment, a Drive or Codespaces link, a URL only in the private comments, a classmate's profile, "Turned in" with nothing attached.
 

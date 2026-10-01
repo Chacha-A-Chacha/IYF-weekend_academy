@@ -80,7 +80,7 @@ Create a file called `index.html` with the following structure:
 Include these elements:
 - [ ] A main heading (`<h1>`) with your name
 - [ ] A paragraph introducing yourself
-- [ ] An image (can be a placeholder from https://placeholder.co)
+- [ ] An image (your own photo in `images/`, or a sized placeholder from https://placehold.co — note the spelling; `placeholder.co` is a dead domain and is flagged as an unreplaced placeholder)
 - [ ] A list of 3 hobbies or interests
 - [ ] A link to your favorite website
 - [ ] Your contact email (use `mailto:` link)

@@ -444,7 +444,7 @@ Practice the real team workflow you'll use for CommunityHub — two people, one 
 
 **Deliverable:** a repo with **2 merged PRs** and **1 resolved merge conflict**, both partners showing under Insights → Contributors.
 
-**Submission:** you still submit your own `iyf-s12-week-03-{your-github-username}`. Link the pair repo in its README under a **Collaboration** heading — B3 is marked from that link. If your partner never engaged, say so there: you are marked on your own branch and PR.
+**Submission:** you still submit your own `iyf-s12-week-03-{your-github-username}`. In its README, under a **Collaboration** heading (template in the [Submission Guidelines](../SUBMISSION_GUIDELINES.md)), link: your partner, the pair repo, **the PR you opened**, **the PR you reviewed**, and **the merge-conflict PR**. B3 is marked from those links only — the marker does not search the pair repo for you. If your partner never engaged, say so there: you are marked on your own branch and PR.
 
 ---
 

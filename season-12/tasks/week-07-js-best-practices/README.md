@@ -787,7 +787,7 @@ describe('formatPrice', () => {
 
 > Verifiable collaboration: your review comments and the author's response commits both show on GitHub.
 >
-> **Make it findable:** the PR you opened lives in your *partner's* repo, not yours. Link it in your own README under a **Collaboration** heading (`Reviewed: <PR URL>`), and link the PR your partner opened on your repo. B3 is marked from those two links. A review the marker cannot find from your README is not marked.
+> **Make it findable:** the PR you opened lives in your *partner's* repo, not yours. Link it in your own README under a **Collaboration** heading (`Reviewed: <PR URL>`), and link the PR your partner opened on your repo. B3 is marked from those two links, using the **Collaboration** template in the Submission Guidelines. A review the marker cannot find from your README is not marked.
 
 ---
 

@@ -76,11 +76,13 @@ What did you learn while building this project?
 ## Challenges Faced
 What problems did you encounter and how did you solve them?
 
-## Collaboration (required in Weeks 3 and 7; omit on other solo weeks)
-- **Partner:** [@partner](https://github.com/partner)
-- **Pair repo / PR I opened:** https://github.com/...
-- **PR my partner opened on my repo:** https://github.com/...
-(The collaboration evidence lives outside this repository. It is marked only from these links.)
+## Collaboration (required in Weeks 0, 3 and 7; omit on other solo weeks)
+- **Team / partner:** [@partner](https://github.com/partner)
+- **Shared repo:** https://github.com/...
+- **PR I opened:** https://github.com/.../pull/N
+- **PR I reviewed:** https://github.com/.../pull/N
+- **Merge conflict I resolved** (Weeks 0 and 3): https://github.com/.../pull/N
+(Collaboration happens outside this repository. It is marked **only** from these links — the marker does not search the shared repo for your work. Every link must point to something authored by your own GitHub account.)
 
 ## Screenshots (optional)
 ![Screenshot description](path/to/screenshot.png)
@@ -93,7 +95,9 @@ What problems did you encounter and how did you solve them?
 
 ## Team Projects - CONTRIBUTORS.md
 
-**Weeks 8–12 are team weeks. The team repository is the submission.** Every member submits the team repo URL to Classroom individually, every week — the lead submitting does not count for anyone else. You are marked on what GitHub can trace to *your* account in that repository: no commits, no marks; no submission, no marks.
+**Weeks 8–12 are team weeks. The team repository is the submission.** Every member submits the team repo URL to Classroom individually, every week — the lead submitting does not count for anyone else.
+
+**Your submission has to tell your own story.** Three teammates submitting the same URL tells the marker nothing about any one of you, so each week **you** add your own entry to `CONTRIBUTORS.md`, in a PR of your own, before the deadline: links to the PRs you opened, the PRs you reviewed, and the issues you closed that week. The marker goes from your Classroom account → your registered GitHub username → your section of `CONTRIBUTORS.md` → those links, and checks that each one is authored by you. **Work you don't list is not marked**; the marker does not search the repo for it. No submission → 0, whatever your commits. Listing someone else's PR as yours is an academic-integrity matter.
 
 For team projects, create a `CONTRIBUTORS.md` file:
 
@@ -108,25 +112,27 @@ For team projects, create a `CONTRIBUTORS.md` file:
 | Team Member 2 | [@teammate2](https://github.com/teammate2) | Developer | Footer, Forms, Styling |
 | Team Member 3 | [@teammate3](https://github.com/teammate3) | Developer | Navigation, Routing |
 
-## Contribution Breakdown
+## Weekly Log — one section per member, each member edits only their own
 
-### Maisori Kitayama
-- Set up project structure
-- Created header component
-- Implemented API calls
-- Code review for all PRs
+### @MaisoriKitayama
 
-### Team Member 2
-- Built footer component
-- Styled all forms
-- Added responsive design
-- Wrote documentation
+#### Week 8
+- **PRs I opened:** [#3 Add header component](https://github.com/MaisoriKitayama/iyf-s12-communityhub-team-MaisoriKitayama/pull/3), [#7 Add PostCard](https://github.com/MaisoriKitayama/iyf-s12-communityhub-team-MaisoriKitayama/pull/7)
+- **PRs I reviewed:** [#5](https://github.com/MaisoriKitayama/iyf-s12-communityhub-team-MaisoriKitayama/pull/5)
+- **Issues I closed:** [#2 Profiles page](https://github.com/MaisoriKitayama/iyf-s12-communityhub-team-MaisoriKitayama/issues/2)
 
-### Team Member 3
-- Created navigation menu
-- Set up React Router
-- Fixed accessibility issues
+#### Week 9
+- ...
+
+### @teammate2
+
+#### Week 8
+- **PRs I opened:** ...
+- **PRs I reviewed:** ...
+- **Issues I closed:** ...
 ```
+
+**Rules for the log:** add your week's entry through **your own PR** (so the log itself is attributed to you); use full links, not bare `#3`; list only what your account authored; a week with no entry is marked on nothing.
 
 ---
 

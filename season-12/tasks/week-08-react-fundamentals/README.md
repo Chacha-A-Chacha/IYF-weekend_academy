@@ -31,6 +31,7 @@ CommunityHub is a **team project** (2–3 people) built from this week through W
 
 **How you work from here (Weeks 8–12):**
 - **The team repository is what you submit** — each week, **every member** submits the team repo URL to Classroom individually. Commits without a submission earn nothing; a submission without commits earns nothing.
+- **Before each deadline, add your own entry to `CONTRIBUTORS.md`** (in your own PR): links to the PRs you opened, the PRs you reviewed and the issues you closed that week. The marker marks you from that entry and nothing else — see the [Submission Guidelines](../SUBMISSION_GUIDELINES.md#team-projects---contributorsmd).
 - Every member **owns at least one MVP feature** end-to-end
 - All work goes through **feature branch → Pull Request → teammate review → merge** (never push to `main`)
 - Lesson exercises (Tasks 15.x, 16.x …) are done on feature branches in the team repo — one branch per exercise per member
