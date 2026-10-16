@@ -15,6 +15,17 @@ This week you'll master the command line and Git, essential tools for every prof
 
 **Deliverable:** Portfolio with full Git history and professional README
 
+> 🚦 **Graded gate — Foundation Complete:** a deployed portfolio, under Git, with a real README and a clean commit history.
+
+### Before you start: your week-03 repository
+1. Create `iyf-s12-week-03-{your-github-username}` on GitHub (public, with a README) and clone it.
+2. Copy your **Week 2** portfolio into it (pages, `styles.css`, `images/`) and commit it on its own: `Add: Week 2 portfolio as the starting point`. Don't change the week-01 or week-02 repos — they have been marked.
+3. Turn on GitHub Pages for it. The graded gate checks the live site.
+
+### Your terminal this week
+- **Windows: use Git Bash** (installed with Git in Week 0 — Start menu → *Git Bash*, or VS Code terminal → `+` dropdown → *Git Bash*). The commands this week (`touch`, `grep`, `find`, `head`, `wc`, `history`) do **not** exist in PowerShell.
+- **Mac / Linux:** the built-in Terminal.
+
 ---
 
 ## Lesson 5 Tasks
@@ -24,7 +35,7 @@ This week you'll master the command line and Git, essential tools for every prof
 
 Complete these exercises entirely in the terminal (no GUI file explorer!).
 
-**Setup:** Open your terminal (PowerShell on Windows, Terminal on Mac/Linux)
+**Setup:** Open Git Bash (Windows) or Terminal (Mac/Linux). Do the exercises in a scratch folder **outside** your repo — `mkdir ~/terminal-practice && cd ~/terminal-practice` — so `rm` can't touch your real work.
 
 **Exercise 1: Basic Navigation**
 ```bash
@@ -63,7 +74,7 @@ my-project/
 - `mkdir -p` - create nested directories
 - `touch` (Mac/Linux) or `New-Item` (PowerShell) - create files
 
-**Document:** Write down each command you used in `terminal-log.md`
+**Document:** Write down each command you used, and what it did, in `terminal-log.md` **in your week-03 repo**. Record only commands you actually ran — a log describing commands that never happened is a fabricated process (-10).
 
 ---
 
@@ -155,7 +166,7 @@ wc -l index.html  # lines only
 Create helpful scripts to automate common tasks.
 
 **Script 1: Project Setup Script**
-Create `new-project.sh` (or `new-project.ps1` for PowerShell):
+Create `new-project.sh` in your week-03 repo (run it from Git Bash on Windows). A PowerShell version is shown too, if you want both:
 
 ```bash
 #!/bin/bash
@@ -194,9 +205,10 @@ Set-Content -Path "$ProjectName\README.md" -Value "# $ProjectName"
 Write-Host "Project $ProjectName created successfully!"
 ```
 
-**Usage:**
+**Usage** (from your scratch folder, not inside your repo):
 ```bash
-./new-project.sh my-awesome-app
+chmod +x ~/path/to/new-project.sh     # once: make it executable
+bash ~/path/to/new-project.sh my-awesome-app
 ```
 
 ---
@@ -221,12 +233,13 @@ git config --global user.email "the-email-on-your-github-account"
 git config --list
 ```
 
-**Exercise: Initialize Repository**
-```bash
-# Navigate to your week-01 project (already cloned)
-cd iyf-s12-week-01-yourusername
+**Exercise: Initialize a Repository from Scratch**
 
-# Initialize Git (if not already done)
+Your week-03 repo was created on GitHub and cloned, so it is already a repository. Practise `git init` in a throwaway folder instead:
+```bash
+mkdir ~/git-practice && cd ~/git-practice
+
+# Initialize Git
 git init
 
 # Check status
@@ -242,10 +255,10 @@ git commit -m "Initial commit: portfolio structure"
 git log
 ```
 
-**Practice:** Make 3 more commits with meaningful messages:
-1. "feat: add navigation styling"
-2. "fix: correct responsive breakpoints"
-3. "docs: update README with project info"
+**Practice — in your week-03 repo:** make 3 commits with meaningful messages, in the course format `Type: description` (types: `Add`, `Fix`, `Update`, `Remove`, `Refactor`, `Style`, `Docs` — this is what B1 marks):
+1. `Style: add navigation hover underline`
+2. `Fix: correct responsive breakpoint for projects grid`
+3. `Docs: add terminal log`
 
 ---
 
@@ -271,7 +284,7 @@ git switch feature/contact-form
 git checkout -b feature/new-header
 ```
 
-**Exercise 2: Branch Workflow**
+**Exercise 2: Branch Workflow** (in your week-03 repo — the branches and merges become part of the history the marker reads)
 1. Create branch `feature/about-page`
 2. Switch to the branch
 3. Make changes to about.html
@@ -294,7 +307,8 @@ git branch -d feature/about-page
 2. Edit the same line in both branches
 3. Try to merge both into main
 4. Resolve the conflict manually
-5. Complete the merge
+5. Complete the merge — commit message `Fix: resolve merge conflict in about.html`
+6. Push `main`. The merge commit is your evidence; describe what conflicted and how you chose in your README's *Challenges Faced*.
 
 ---
 
@@ -356,6 +370,8 @@ Thumbs.db
 
 Create a professional README for your week-03 repository.
 
+> ⚠️ **Replace every line of this template.** The marker searches for `Your Name`, `yourusername`, `your@email.com` and `yourprofile`. Delete any line you can't fill — no LinkedIn? remove that line. Write the *Project Structure* from your real folders, not this example.
+
 **Requirements:**
 
 ```markdown
@@ -412,6 +428,14 @@ Describe key lessons from building this project.
 - Email: your@email.com
 - LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
 - GitHub: [@yourusername](https://github.com/yourusername)
+
+## Collaboration
+
+- **Partner:** [@partner](https://github.com/partner)
+- **Pair repo:** https://github.com/...
+- **PR I opened:** https://github.com/.../pull/N
+- **PR I reviewed:** https://github.com/.../pull/N
+- **Merge-conflict PR:** https://github.com/.../pull/N
 
 ## License
 
@@ -477,9 +501,11 @@ Write a script that creates an HTML boilerplate with:
 
 ### Day 4: Git Commit Message Practice 🟢
 Review your commit history and practice good commit messages:
-- Use present tense
-- Start with type: feat, fix, docs, style, refactor
+- Use present tense ("Add", not "Added")
+- Start with the course type: `Add`, `Fix`, `Update`, `Remove`, `Refactor`, `Style`, `Docs`, then a colon
 - Keep under 50 characters
+
+(You'll see `feat:` / `fix:` in the wild — that's Conventional Commits, a similar convention. This course marks the `Type: description` format.)
 Make 5 commits with perfect messages today.
 
 ### Day 5: Upgrade Your Profile README 🟡

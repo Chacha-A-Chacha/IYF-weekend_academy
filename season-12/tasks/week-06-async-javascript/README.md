@@ -333,9 +333,13 @@ async function getUser(id) {
     }
 }
 
-// Use it
-const user = await getUser(1);
-console.log(user);
+// Use it — inside an async function. A top-level `await` only works in the
+// DevTools Console or a <script type="module">; in a normal script file it is a SyntaxError.
+async function main() {
+    const user = await getUser(1);
+    console.log(user);
+}
+main();
 ```
 
 **Practice:** Fetch and display:
@@ -400,6 +404,8 @@ function showError(message) {
     errorDiv.classList.remove("hidden");
 }
 
+// innerHTML is acceptable here because the data comes from an API you chose and
+// you are not inserting anything a visitor typed. Anything typed by a user → textContent (Week 5).
 function displayUsers(users) {
     container.innerHTML = users.map(user => `
         <div class="user-card">
@@ -442,13 +448,16 @@ async function createPost(title, body, userId) {
     return response.json();
 }
 
-// Use it
-const newPost = await createPost(
-    "My First Post",
-    "This is the content of my post.",
-    1
-);
-console.log("Created:", newPost);
+// Use it — inside an async function (see Task 12.1)
+async function demo() {
+    const newPost = await createPost(
+        "My First Post",
+        "This is the content of my post.",
+        1
+    );
+    console.log("Created:", newPost);
+}
+demo();
 ```
 
 **Build:** Create a form that submits a new post and displays the result.
@@ -507,7 +516,7 @@ Build a weather application using the OpenWeatherMap API.
    const API_KEY = "";
    ```
    Load `config.js` before your app script: `<script src="config.js"></script>`. Your README's *How to Run* must say: copy `config.example.js` to `config.js` and add your key.
-3. API endpoint: `https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric`
+3. API endpoint: `https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric` — wrap the city in `encodeURIComponent(city)` so "Dar es Salaam" works.
 
 > **Why bother, if the browser can see it anyway?** It's true: a static site sends the key to every visitor, and there is no way round that without a backend — which is exactly why you build one in Week 10. A free-tier weather key exposed to the browser is an acceptable limit. A key in your **git history** is not: it is there forever, in every clone and fork, long after you revoke it. Hardcoded keys are penalised (-5) and a checker looks for them.
 
@@ -517,6 +526,7 @@ Build a weather application using the OpenWeatherMap API.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -575,6 +585,7 @@ Build a weather application using the OpenWeatherMap API.
         </div>
     </div>
     
+    <script src="config.js"></script>   <!-- defines API_KEY; git-ignored -->
     <script src="app.js"></script>
 </body>
 </html>
@@ -605,7 +616,11 @@ Build a weather application using the OpenWeatherMap API.
 4. **Recent Searches**
    - Save last 5 searched cities
    - Click on recent search to search again
-   - Store in localStorage (preview for next week)
+   - Store in `localStorage` — a preview of Week 7. You only need two lines:
+     ```javascript
+     localStorage.setItem("recent", JSON.stringify(recent));          // save (JSON, Week 4)
+     const recent = JSON.parse(localStorage.getItem("recent")) || [];  // load
+     ```
 
 5. **Bonus Features**
    - 5-day forecast (different API endpoint)
@@ -613,9 +628,10 @@ Build a weather application using the OpenWeatherMap API.
    - Geolocation - get weather for current location
    - Background changes based on weather
 
-**Starter JavaScript:**
+**Starter JavaScript** (`app.js`):
 ```javascript
-const API_KEY = "your_api_key_here";
+// API_KEY is NOT declared here — it comes from config.js (git-ignored), loaded first.
+// Never paste your key into this file: once committed, it is in your git history forever.
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 // DOM Elements
@@ -636,7 +652,7 @@ const wind = document.getElementById("wind");
 const pressure = document.getElementById("pressure");
 
 async function getWeather(city) {
-    const url = `${BASE_URL}?q=${city}&appid=${API_KEY}&units=metric`;
+    const url = `${BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`;
     
     try {
         showLoading();
@@ -645,9 +661,8 @@ async function getWeather(city) {
         const response = await fetch(url);
         
         if (!response.ok) {
-            if (response.status === 404) {
-                throw new Error("City not found");
-            }
+            if (response.status === 404) throw new Error("City not found");
+            if (response.status === 401) throw new Error("API key not valid yet — new keys can take an hour to activate");
             throw new Error("Failed to fetch weather data");
         }
         
@@ -656,7 +671,8 @@ async function getWeather(city) {
         saveToHistory(city);
         
     } catch (err) {
-        showError(err.message);
+        // fetch itself rejects (TypeError) only when there is no network at all
+        showError(err.name === "TypeError" ? "Network error — check your connection" : err.message);
     } finally {
         hideLoading();
     }
@@ -708,6 +724,56 @@ form.addEventListener("submit", (e) => {
 // Initialize
 loadHistory();
 ```
+
+---
+
+### Deploy — the graded gate 🚦
+**Week 6 is a graded gate (*JavaScript Proficient*): the weather app must be live.** But `config.js` is git-ignored, so GitHub Pages never receives it, and the deployed site would have no key. The fix is the way professionals do it: store the key as a **repository secret** and let **GitHub Actions** write `config.js` while it deploys. The key never enters your git history.
+
+1. Repo → **Settings → Secrets and variables → Actions → New repository secret**. Name: `OPENWEATHER_API_KEY`. Value: your key.
+2. Repo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Create `.github/workflows/deploy.yml` with exactly this, then commit and push:
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write config.js from the repository secret
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+        run: echo "const API_KEY = \"$OPENWEATHER_API_KEY\";" > config.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+4. Repo → **Actions** tab: wait for the green tick, then open the URL it shows.
+
+> The key still reaches visitors' browsers — every front-end-only app has that limit, and a free-tier weather key is an acceptable risk. Week 10's backend removes it entirely. What the workflow guarantees is that **the key is never committed**.
+>
+> **Check before you submit:** `git log -p | grep -i appid` must show only `${API_KEY}`, never a real key.
 
 ---
 

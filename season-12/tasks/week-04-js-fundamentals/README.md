@@ -15,6 +15,8 @@ This week you'll begin your JavaScript journey, learning the core concepts that 
 
 **Deliverable:** Interactive calculator + Student grade tracker
 
+> ⚠️ **Use your own data, not the examples' names.** The examples below use made-up people and values. Your submission must not contain `Your Name`, `John Doe`, `Jane Doe`, `@example.com` or other template text — the marker searches for them (-5 / -10). Write your own values.
+
 ---
 
 ## Lesson 7 Tasks
@@ -24,13 +26,21 @@ This week you'll begin your JavaScript journey, learning the core concepts that 
 
 **Setup your JS environment in your week-04 repository:**
 
-1. Clone or create your repository: `iyf-s12-week-04-{your-username}`
-2. Create `index.html`:
+1. Create `iyf-s12-week-04-{your-github-username}` on GitHub (public, with a README) and clone it.
+2. Add a `.gitignore` **before your first commit** — it's required from Week 4 (-2 without it):
+```
+node_modules/
+.vscode/
+.DS_Store
+Thumbs.db
+```
+3. Create `index.html`:
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Practice</title>
 </head>
 <body>
@@ -40,13 +50,13 @@ This week you'll begin your JavaScript journey, learning the core concepts that 
 </html>
 ```
 
-3. Create `main.js` and practice variables:
+4. Create `main.js` and practice variables (open the page with Live Server, then **F12 → Console**):
 
 ```javascript
-// Variable declarations
-let name = "Your Name";
-let age = 25;
-const birthYear = 1999;
+// Variable declarations — use YOUR details
+let name = "Amina";
+let age = 21;
+const birthYear = 2005;
 
 // typeof operator
 console.log(typeof name);    // string
@@ -97,21 +107,21 @@ count--;  // count is now 0
 
 **Exercise 2: String Operations**
 ```javascript
-let firstName = "John";
-let lastName = "Doe";
+let firstName = "Amina";
+let lastName = "Otieno";
 
 // Concatenation
 let fullName = firstName + " " + lastName;
 
 // Template literals (preferred)
 let greeting = `Hello, ${firstName}!`;
-let message = `Your name has ${firstName.length} characters.`;
+let message = `${firstName} has ${firstName.length} letters.`;
 
 // String methods
 console.log(fullName.toUpperCase());
 console.log(fullName.toLowerCase());
 console.log(firstName.charAt(0));
-console.log(fullName.includes("John"));
+console.log(fullName.includes("Amina"));
 ```
 
 **Exercise 3: Comparison & Logical Operators**
@@ -168,7 +178,7 @@ const divide = (a, b) => {
 1. `calculateArea(width, height)` - returns area of rectangle
 2. `celsiusToFahrenheit(celsius)` - converts temperature
 3. `isEven(number)` - returns true if even, false if odd
-4. `getInitials(fullName)` - returns initials (e.g., "John Doe" → "JD")
+4. `getInitials(fullName)` - returns initials (e.g., "Amina Otieno" → "AO")
 5. `reverseString(str)` - reverses a string
 
 **Exercise 3: Default Parameters**
@@ -360,14 +370,14 @@ console.log(numbers.includes(3)); // true
 ```javascript
 // Creating objects
 const person = {
-    firstName: "John",
-    lastName: "Doe",
+    firstName: "Brian",
+    lastName: "Kamau",
     age: 30,
     isStudent: false,
-    hobbies: ["reading", "coding", "gaming"],
+    hobbies: ["reading", "coding", "football"],
     address: {
-        city: "New York",
-        country: "USA"
+        city: "Nairobi",
+        country: "Kenya"
     }
 };
 
@@ -378,7 +388,7 @@ console.log(person.address.city);      // Nested
 
 // Modifying properties
 person.age = 31;
-person.email = "john@example.com";     // Add new property
+person.phone = "0712 345 678";         // Add new property
 delete person.isStudent;               // Remove property
 ```
 
@@ -463,6 +473,37 @@ const hasTopStudent = students.some(/* your code */);
 // 8. Check if all students are passing (grade >= 60)
 const allPassing = students.every(/* your code */);
 ```
+
+---
+
+### Task 8.4: JSON — Data as Text 🟡
+**Time:** 25 minutes
+
+JSON is how data travels: from an API (Week 6), into `localStorage` (Week 7), and between your CommunityHub frontend and backend (Weeks 10–12). It looks like a JavaScript object, but it is a **string**.
+
+```javascript
+const json = '{"name":"Wanjiku","grades":{"math":88,"english":92}}';
+
+// Text → object
+const student = JSON.parse(json);
+console.log(student.grades.math);        // 88
+
+// Object → text (2 = indent, for readability)
+const backToText = JSON.stringify(student, null, 2);
+console.log(typeof backToText);          // "string"
+```
+
+**Exercise:** given this JSON string of posts, parse it, then:
+```javascript
+const postsJson = '[{"id":1,"title":"Welcome","likes":12,"published":true},{"id":2,"title":"Draft ideas","likes":0,"published":false},{"id":3,"title":"Week 4 recap","likes":30,"published":true}]';
+```
+1. Parse it into an array
+2. Keep only published posts
+3. Sort them by likes, highest first
+4. Map them to strings like `"Week 4 recap (30 likes)"`
+5. `JSON.stringify` the filtered array back to text
+
+**Rules to remember:** JSON keys and strings use **double quotes**; no trailing commas; no functions or `undefined`. `JSON.parse` on invalid text throws a `SyntaxError` — wrap it in `try/catch` when the text comes from outside your code.
 
 ---
 
@@ -573,6 +614,7 @@ Write a function that checks if a string is a palindrome.
 - [ ] Use array methods (map, filter, reduce, find)
 - [ ] Create and work with objects
 - [ ] Work with arrays of objects
+- [ ] Parse and stringify JSON
 - [ ] Calculator project complete
 - [ ] Grade tracker project complete
 - [ ] All daily challenges complete

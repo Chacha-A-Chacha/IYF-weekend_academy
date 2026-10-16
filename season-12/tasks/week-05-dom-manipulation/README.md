@@ -15,6 +15,21 @@ This week you'll learn to make your pages interactive! You'll select elements, r
 
 **Deliverable:** Interactive To-Do List application
 
+### Repository layout — use these names
+Your week-05 repo holds two things: the practice page (Lessons 9–10) and the to-do app (the deliverable). The to-do app goes at the **root**, so GitHub Pages shows it:
+```
+iyf-s12-week-05-{your-github-username}/
+├── index.html          ← the To-Do List (mini-project)
+├── styles.css
+├── app.js
+├── dom-practice.html   ← Task 9.1 practice page
+├── dom.js              ← Tasks 9.x and 10.x practice code
+├── daily-challenges/
+├── .gitignore
+└── README.md
+```
+> In Season 11 several students submitted Week 5 with **no to-do list code in the repo** — practice files only. The to-do app is the deliverable; without it C2 is 0.
+
 ---
 
 ## Lesson 9 Tasks
@@ -22,13 +37,14 @@ This week you'll learn to make your pages interactive! You'll select elements, r
 ### Task 9.1: Selecting Elements 🟢
 **Time:** 30 minutes
 
-**Setup:** Create this HTML file to practice:
+**Setup:** create and clone `iyf-s12-week-05-{your-github-username}`, add a `.gitignore` first (`node_modules/`, `.vscode/`, `.DS_Store`, `Thumbs.db`), then save this as **`dom-practice.html`**:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Practice</title>
     <style>
         .highlight { background-color: yellow; }
@@ -170,9 +186,13 @@ article.innerHTML = `
     <p>This is new content.</p>
 `;
 
-// Safer: textContent (escapes HTML)
-const userInput = "<script>alert('hack!')</script>";
-article.textContent = userInput;  // Displays as text, not executed
+// Why innerHTML is dangerous with anything a user typed:
+const userInput = `<img src="x" onerror="alert('hacked!')">`;
+article.innerHTML = userInput;    // the image fails to load, onerror RUNS the code
+article.textContent = userInput;  // shows the characters as text — nothing runs
+
+// Rule: textContent for anything that came from a user or an API.
+// innerHTML only for HTML you wrote yourself.
 ```
 
 **Exercise 3: Attributes**
@@ -184,8 +204,8 @@ console.log(link.getAttribute("href"));
 console.log(link.href);  // Property access
 
 // Set attribute
-link.setAttribute("href", "https://example.com");
-link.href = "https://example.com";  // Same result
+link.setAttribute("href", "https://developer.mozilla.org");
+link.href = "https://developer.mozilla.org";  // Same result
 
 // Check attribute
 console.log(link.hasAttribute("target"));
@@ -433,6 +453,8 @@ document.getElementById("child").addEventListener("click", () => {
 ```
 
 **Exercise 2: Event Delegation**
+
+> **`closest()`, not just `matches()`:** if the clicked `li` contains a `<span>` or a `<button>`, `event.target` is the span or the button, not the `li`. `event.target.closest("li")` walks up to the nearest `li` — use it whenever the item has anything inside it.
 ```javascript
 // BAD: Adding listeners to each item
 const items = document.querySelectorAll("li");
@@ -538,6 +560,7 @@ Build a fully functional to-do list application.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -682,7 +705,7 @@ Create two divs - source and target.
 ### Day 5: Dark Mode Toggle 🟡
 Implement a dark mode toggle:
 - Toggle class on body element
-- Save preference (hint: we'll learn localStorage next week)
+- Save preference (hint: `localStorage` is taught in Week 7 — try it early if you like)
 - Animate the transition
 
 ---
