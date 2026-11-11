@@ -44,7 +44,7 @@ You'll need:
 
 - [ ] Install [Git](https://git-scm.com/downloads)
 - [ ] Install [VS Code](https://code.visualstudio.com/) with the **Live Server** and **Prettier** extensions
-- [ ] Install [Node.js LTS](https://nodejs.org/) (v20+) — first used in Week 7
+- [ ] Install [Node.js LTS](https://nodejs.org/) — **version 22 or 24** (check with `node --version`). First used in Week 7: the test runner (Vitest) and Vite need Node 22.12 or newer, and Node 20 will fail with an "unsupported engine" error
 - [ ] Chrome or Firefox for DevTools
 
 Then tell Git who you are. **The email must be the one on your GitHub account** — otherwise GitHub cannot attribute your commits to you, and unattributed commits earn nothing on team weeks.
@@ -99,7 +99,9 @@ In your profile repository, create `markdown-practice.md` and complete all 8 exe
 ## Task 0.6: Team Collaboration 🟡
 **Time:** 90 minutes
 
-Your team of **2–3** is assigned by the instructor from the registration forms and posted in Classroom. This rehearses exactly the workflow you will use in Week 3 and in the Weeks 8–12 team project.
+**Find your own team of 2–3.** The instructor pins a *Week 0 Team Board* in Classroom; reply with your GitHub username to start a team or to join one that has fewer than three members, and name your **lead**. Do it in the first days of the week — if the deadline passes and no team has taken you, reply to the smallest team on the board: **a team of fewer than three must take anyone who asks.** Nobody is assigned a team, so nobody is waiting to be told. This rehearses exactly the workflow you will use in Week 3 and in the Weeks 8–12 team project.
+
+> **If you end up alone** — the board ran odd, or your team never pushed anything — do the task anyway: create `iyf-s12-week-00-team-{your-username}` yourself, work on a branch, open your PR and merge it. You can still resolve a merge conflict on your own: make two branches that edit the same line, merge the first, resolve the second. The only mark that needs a second person is the teammate's review, and it is waived if you name under *Week 0 Team* who went missing. Say what happened; do not leave it blank.
 
 **Team lead:**
 1. New repository → `iyf-s12-week-00-team-{lead-username}` → Public → *Add a README file*.

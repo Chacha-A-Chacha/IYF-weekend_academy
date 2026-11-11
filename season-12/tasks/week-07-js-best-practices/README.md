@@ -13,7 +13,38 @@ This week you'll learn to persist data, structure larger applications, and write
 - Lesson 13: Local Storage & State Management
 - Lesson 14: JavaScript Best Practices & Code Quality
 
-**Deliverable:** Refactored To-Do List with persistence + Code review ready projects
+**Deliverable:** your Week 5 To-Do List, **refactored**: it survives a page refresh (`localStorage`), it's split into modules, it passes ESLint, and it has unit tests that pass with `npm test`.
+
+The Shopping Cart (Lesson 13) is a **class build** — it goes in a `cart/` folder in the same repo and counts towards task completion, but the To-Do refactor is the deliverable.
+
+### Repository layout
+```
+iyf-s12-week-07-{your-github-username}/
+├── index.html            ← the To-Do List, loads js/app.js as a module
+├── styles.css
+├── js/
+│   ├── app.js            ← starts the app, wires events
+│   ├── state.js          ← the state object and the actions that change it
+│   ├── storage.js        ← localStorage load/save, safe against bad data
+│   ├── todo-logic.js     ← PURE functions — no DOM, no localStorage
+│   └── ui.js             ← everything that touches the DOM
+├── tests/
+│   └── todo-logic.test.js
+├── cart/                 ← Lesson 13 class build
+├── daily-challenges/
+├── eslint.config.js
+├── .prettierrc
+├── package.json          ← committed
+├── package-lock.json     ← committed
+├── .gitignore            ← MUST list node_modules/
+└── README.md
+```
+
+**Start from Week 5:** create and clone the week-07 repo, copy your Week 5 `index.html`, `styles.css` and `app.js` in, and commit them on their own: `Add: Week 5 to-do list as the starting point`.
+
+> ⚠️ **This is the first week you use `npm`.** `npm install` creates a `node_modules/` folder with thousands of files. It must **never** be committed (-5). Put `node_modules/` in `.gitignore` **before** you run `npm install`, and check `git status` before every commit. Anyone who clones your repo runs `npm install` to recreate it from `package-lock.json`.
+
+> **Node 22 or 24 required** (`node --version`). Vitest and Vite do not run on Node 20 any more.
 
 ---
 
@@ -25,11 +56,11 @@ This week you'll learn to persist data, structure larger applications, and write
 **Exercise 1: Getting Started with localStorage**
 ```javascript
 // Store a simple value
-localStorage.setItem("username", "John");
+localStorage.setItem("username", "Amina");
 
 // Retrieve the value
 const username = localStorage.getItem("username");
-console.log(username);  // "John"
+console.log(username);  // "Amina"
 
 // Remove a value
 localStorage.removeItem("username");
@@ -47,8 +78,8 @@ if (localStorage.getItem("username")) {
 ```javascript
 // localStorage only stores strings!
 const user = {
-    name: "John",
-    age: 30,
+    name: "Amina",
+    age: 21,
     hobbies: ["coding", "reading"]
 };
 
@@ -59,7 +90,7 @@ console.log(localStorage.getItem("user"));  // "[object Object]"
 // RIGHT - serialize to JSON
 localStorage.setItem("user", JSON.stringify(user));
 const retrieved = JSON.parse(localStorage.getItem("user"));
-console.log(retrieved);  // { name: "John", age: 30, hobbies: [...] }
+console.log(retrieved);  // { name: "Amina", age: 21, hobbies: [...] }
 ```
 
 **Exercise 3: Helper Functions**
@@ -71,7 +102,12 @@ function saveToStorage(key, data) {
 
 function getFromStorage(key, defaultValue = null) {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : defaultValue;
+    if (data === null) return defaultValue;
+    try {
+        return JSON.parse(data);
+    } catch {
+        return defaultValue;   // someone (or an old version of your app) saved bad JSON — don't crash
+    }
 }
 
 function removeFromStorage(key) {
@@ -90,62 +126,42 @@ const settings = getFromStorage("settings", { theme: "light", fontSize: 14 });
 ### Task 13.2: Persistent To-Do List 🟡
 **Time:** 60 minutes
 
-**Upgrade your To-Do List from Week 5:**
+**Upgrade your To-Do List from Week 5.** Your Week 5 rule still holds: *the array is the truth, the page is a picture of it.* Persistence adds one step — **load once at startup, save after every change:**
 
 ```javascript
 const STORAGE_KEY = "todos";
 
-// Load todos from storage on startup
-function loadTodos() {
-    return getFromStorage(STORAGE_KEY, []);
-}
+// 1. Load ONCE, when the app starts
+let todos = getFromStorage(STORAGE_KEY, []);
+let currentFilter = getFromStorage("filter", "all");
 
-// Save todos whenever they change
-function saveTodos(todos) {
+// 2. One place that saves and redraws
+function commit() {
     saveToStorage(STORAGE_KEY, todos);
+    saveToStorage("filter", currentFilter);
+    render();
 }
 
-// Updated addTodo function
+// 3. Every action: change the array, then commit()
 function addTodo(text) {
-    const newTodo = {
-        id: Date.now(),  // Simple unique ID
-        text: text,
-        completed: false,
-        createdAt: new Date().toISOString()
-    };
-    
-    const todos = loadTodos();
-    todos.push(newTodo);
-    saveTodos(todos);
-    
-    renderTodos();
+    todos = [...todos, { id: Date.now(), text, completed: false, createdAt: new Date().toISOString() }];
+    commit();
 }
 
-// Updated toggleTodo
 function toggleTodo(id) {
-    const todos = loadTodos();
-    const todo = todos.find(t => t.id === id);
-    
-    if (todo) {
-        todo.completed = !todo.completed;
-        saveTodos(todos);
-        renderTodos();
-    }
+    todos = todos.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t));
+    commit();
 }
 
-// Updated deleteTodo
 function deleteTodo(id) {
-    let todos = loadTodos();
-    todos = todos.filter(t => t.id !== id);
-    saveTodos(todos);
-    renderTodos();
+    todos = todos.filter((t) => t.id !== id);
+    commit();
 }
 
-// Initialize
-document.addEventListener("DOMContentLoaded", () => {
-    renderTodos();
-});
+render();   // the script is at the end of <body>, so no DOMContentLoaded needed
 ```
+
+> Don't re-read `localStorage` inside every action — it's slow, and the in-memory array and the stored copy drift apart when one of them is forgotten. And remember from Week 5: `dataset.id` is a **string** — `Number(item.dataset.id)` before comparing with `t.id`.
 
 **Requirements:**
 1. ✅ Todos persist across page refreshes
@@ -187,7 +203,7 @@ inputs.forEach(input => {
     if (saved) {
         input.value = saved;
     }
-    
+
     // Save on input
     input.addEventListener("input", () => {
         sessionStorage.setItem(`form_${input.name}`, input.value);
@@ -261,16 +277,16 @@ function loadState() {
 const createStore = (initialState) => {
     let state = initialState;
     const listeners = [];
-    
+
     return {
         getState: () => state,
-        
+
         setState: (updates) => {
             state = { ...state, ...updates };
             // Notify all listeners
             listeners.forEach(listener => listener(state));
         },
-        
+
         subscribe: (listener) => {
             listeners.push(listener);
             // Return unsubscribe function
@@ -301,10 +317,10 @@ unsubscribe();
 
 ---
 
-### Mini-Project: Shopping Cart 🔴
-**Time:** 90 minutes
+### Class Build: Shopping Cart 🔴
+**Time:** 60 minutes · built in Lesson 13 · goes in `cart/` (`cart/index.html`, `cart/cart.js`)
 
-Build a shopping cart with state management and persistence.
+Build a shopping cart with state management and persistence. It practises the same pattern as the deliverable on fresh code: one state object, actions that change it, values that are **calculated** (total, count) rather than stored, and save-after-every-change.
 
 **Requirements:**
 
@@ -332,22 +348,22 @@ Build a shopping cart with state management and persistence.
 ```javascript
 const state = {
     products: [
-        { id: 1, name: "Laptop", price: 999, image: "..." },
-        { id: 2, name: "Phone", price: 699, image: "..." },
-        { id: 3, name: "Headphones", price: 199, image: "..." }
+        { id: 1, name: "Mandazi (pack of 6)", price: 120 },
+        { id: 2, name: "Chapati (pack of 5)", price: 150 },
+        { id: 3, name: "Tea leaves 250g", price: 180 }
     ],
-    cart: []  // { productId, quantity }
+    cart: []  // { productId, quantity } — only the cart is saved; products are fixed
 };
 
 function addToCart(productId) {
     const existing = state.cart.find(item => item.productId === productId);
-    
+
     if (existing) {
         existing.quantity++;
     } else {
         state.cart.push({ productId, quantity: 1 });
     }
-    
+
     saveCart();
     renderCart();
 }
@@ -371,6 +387,8 @@ function getCartCount() {
     return state.cart.reduce((count, item) => count + item.quantity, 0);
 }
 ```
+
+**Bonus:** undo the last change (keep a history array of previous `cart` copies; Undo restores the last one).
 
 ---
 
@@ -441,7 +459,21 @@ export function remove(key) {
 }
 ```
 
-**Task:** Reorganize your To-Do List into multiple files.
+**Loading modules in the browser** — this is the step everyone misses:
+```html
+<!-- index.html: ONE script tag, type="module", at the end of <body> -->
+<script type="module" src="js/app.js"></script>
+```
+```javascript
+// js/app.js
+import { loadTodos, saveTodos } from "./storage.js";   // the ".js" is required in the browser
+import { addTodo, toggleTodo } from "./todo-logic.js";
+```
+- Without `type="module"`, the browser stops at the first `import` with **"Cannot use import statement outside a module"**.
+- Modules only load from a server — use **Live Server**. Double-clicking `index.html` (a `file://` address) gives a CORS error.
+- Each module has its own scope: a variable in `storage.js` is invisible to `app.js` unless it's exported and imported.
+
+**Task:** Reorganize your To-Do List into the files in the repository layout above. The most important split: put the logic that **only transforms data** — add, toggle, delete, filter, count — in `todo-logic.js` as **pure functions** that take an array and return a new one. No `document`, no `localStorage` in that file. That's what makes it testable in Task 14.5.
 
 ---
 
@@ -471,17 +503,17 @@ function processUser(userData) {
     // Validate
     if (!userData.email.includes("@")) throw new Error("Invalid email");
     if (userData.age < 18) throw new Error("Must be adult");
-    
+
     // Transform
     userData.email = userData.email.toLowerCase();
     userData.name = userData.name.trim();
-    
+
     // Save to database
     database.save(userData);
-    
+
     // Send email
     emailService.send(userData.email, "Welcome!");
-    
+
     // Update UI
     document.getElementById("status").textContent = "User created!";
 }
@@ -595,16 +627,16 @@ Using Chrome DevTools:
 // Find and fix all bugs in this code
 function calculateOrderTotal(items) {
     let total = 0;
-    
+
     for (let i = 0; i <= items.length; i++) {
         const item = items[i];
         total += item.price * item.quanity;
     }
-    
+
     if (total > 100) {
         total = total * 0.9;  // 10% discount
     }
-    
+
     return total;
 }
 
@@ -615,8 +647,8 @@ const order = [
 ];
 
 console.log(calculateOrderTotal(order));
-// Expected: 69 (before discount) or 62.1 (after discount)
-// Actual: ???
+// Expected: 69   (30 + 15 + 24 — under 100, so no discount)
+// Actual: ???   — find the two bugs, then test the discount with an order over 100
 ```
 
 ---
@@ -624,74 +656,78 @@ console.log(calculateOrderTotal(order));
 ### Task 14.4: ESLint & Prettier Setup 🔴
 **Time:** 45 minutes
 
-**Exercise: Set Up Linting**
+> **The old setup no longer works.** Tutorials (and this course until Season 11) show an `.eslintrc.json` file. ESLint 9 and later **ignore it** — you get *"ESLint couldn't find an eslint.config.(js|mjs|cjs) file"*. Use the setup below.
 
-1. **Initialize npm project:**
+**1. Initialise npm — and protect `node_modules/` first:**
 ```bash
+echo "node_modules/" >> .gitignore
 npm init -y
+npm pkg set type=module          # lets your config and tests use import/export
 ```
 
-2. **Install ESLint:**
+**2. Install ESLint, its recommended rules, browser globals, and Prettier:**
 ```bash
-npm install eslint --save-dev
-npx eslint --init
+npm install --save-dev eslint @eslint/js globals prettier
 ```
 
-3. **Configure ESLint (.eslintrc.json):**
-```json
-{
-    "env": {
-        "browser": true,
-        "es2021": true
+**3. Create `eslint.config.js`:**
+```javascript
+import js from "@eslint/js";
+import globals from "globals";
+
+export default [
+    { ignores: ["node_modules/"] },
+    js.configs.recommended,
+    {
+        languageOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+            globals: { ...globals.browser },
+        },
+        rules: {
+            "no-var": "error",
+            eqeqeq: "error",
+            curly: "error",
+            "prefer-const": "warn",
+            "no-unused-vars": "warn",
+        },
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+    {
+        files: ["tests/**/*.js"],
+        languageOptions: { globals: { ...globals.node } },
     },
-    "rules": {
-        "no-unused-vars": "warn",
-        "no-console": "off",
-        "eqeqeq": "error",
-        "curly": "error",
-        "prefer-const": "warn"
-    }
-}
+];
 ```
+`no-var` and `eqeqeq` are the exact rules the marker checks by hand. Now ESLint checks them for you.
 
-4. **Install Prettier:**
-```bash
-npm install prettier --save-dev
-```
-
-5. **Configure Prettier (.prettierrc):**
+**4. Create `.prettierrc`:**
 ```json
 {
     "semi": true,
-    "singleQuote": true,
+    "singleQuote": false,
     "tabWidth": 4,
     "trailingComma": "es5",
-    "printWidth": 80
+    "printWidth": 100
 }
 ```
 
-6. **VS Code Extensions:**
-   - Install ESLint extension
-   - Install Prettier extension
-   - Set "Format on Save"
-
-7. **Add to package.json:**
+**5. Add scripts to `package.json`:**
 ```json
 {
     "scripts": {
-        "lint": "eslint src/",
-        "lint:fix": "eslint src/ --fix",
-        "format": "prettier --write src/"
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write \"**/*.{js,html,css}\"",
+        "test": "vitest run"
     }
 }
 ```
 
-**Task:** Run ESLint on your To-Do List and fix all errors/warnings.
+**6. VS Code:** install the **ESLint** and **Prettier** extensions; turn on *Format on Save*.
+
+> ⚠️ **Format before you collaborate, not during.** Prettier rewrites whole files. Run `npm run format` once and commit it on its own (`Style: format with Prettier`). If it reformats a file in the middle of a PR, every line shows as changed and your reviewer can't see your real change (Live Session 2).
+
+**Task:** run `npm run lint` on your To-Do List and fix every error and warning. Commit: `Fix: lint errors`.
 
 ---
 
@@ -700,24 +736,17 @@ npm install prettier --save-dev
 
 Add automated tests to one of your projects. We'll use **Vitest** (fast, minimal config, Jest-compatible API) — but **any test runner is fine: Jest, Node's built-in `node:test`, etc.** The concepts are identical.
 
-**Set up Vitest:**
+**Set up Vitest** (Node 22 or 24):
 ```bash
 npm install --save-dev vitest
 ```
-Add to `package.json`:
-```json
-{
-  "scripts": {
-    "test": "vitest"
-  }
-}
-```
+The `"test": "vitest run"` script from Task 14.4 runs the tests once and exits. (`vitest` on its own keeps watching for changes — handy while you work, but it never finishes.)
 
 **Test pure functions.** Extract a pure function from a past project into its own module, then test it:
 ```js
 // format.js
-export function formatPrice(cents) {
-  return `$${(cents / 100).toFixed(2)}`;
+export function formatPrice(amount) {
+  return `KSh ${amount.toLocaleString("en-KE")}`;
 }
 ```
 ```js
@@ -726,27 +755,30 @@ import { describe, it, expect } from 'vitest';
 import { formatPrice } from './format.js';
 
 describe('formatPrice', () => {
-  it('formats whole dollars', () => {
-    expect(formatPrice(500)).toBe('$5.00');
+  it('formats with a thousands separator', () => {
+    expect(formatPrice(1500)).toBe('KSh 1,500');
   });
   it('handles zero', () => {
-    expect(formatPrice(0)).toBe('$0.00');
+    expect(formatPrice(0)).toBe('KSh 0');
   });
 });
 ```
 
-**Your tasks:**
+**Your tasks — test your To-Do List's logic:**
 - [ ] Install a test runner (Vitest recommended; Jest or `node:test` accepted)
-- [ ] Extract at least 2 pure functions into their own module
-- [ ] Write at least 4 tests, including one edge case (empty / invalid input)
+- [ ] Test the pure functions in `js/todo-logic.js` (add, toggle, delete, filter, count) in `tests/todo-logic.test.js`
+- [ ] Write at least 4 tests, including one edge case (empty text, an id that doesn't exist, an empty list)
+- [ ] Include one test that proves the function **doesn't change the original array**
 - [ ] Run `npm test` and make them all pass
+
+> **Why pure functions?** A function that touches `document` or `localStorage` needs a browser to run. A function that takes an array and returns an array runs anywhere — including the test runner. Splitting them apart in Task 14.1 is what makes this task possible.
 
 > Prefer Jest? Swap `vitest` for `jest` — the `describe / it / expect` API is the same.
 
 ---
 
 ### Collaborative Task: Peer Code Review 🔴
-**Time:** 60 minutes
+**Time:** 60 minutes · 👥 With a reviewer you find on the *Week 7 Review Board*
 
 **Peer Review Checklist:**
 
@@ -778,16 +810,42 @@ describe('formatPrice', () => {
 - [ ] Proper indentation
 - [ ] Meaningful comments (when needed)
 
-**Review Process (on GitHub):**
-1. Your partner is assigned and posted in Classroom by Week 6 — do not pick your own
-2. Open a **Pull Request** against your partner's To-Do List repo (a small improvement, or a `REVIEW.md` with your notes)
-3. Use the checklist above to leave **inline review comments** on their code
-4. The author responds with follow-up commits addressing the feedback
-5. Approve and merge once addressed
+**Review Process (on GitHub)** — real code review: the **author** opens the PR, a classmate reviews it.
 
-> Verifiable collaboration: your review comments and the author's response commits both show on GitHub.
+1. **Open a PR of your own work:** do the module refactor (Task 14.1) on a branch, `refactor/modules`, push it, and open a PR into `main`.
+2. **Post it on the board.** The instructor pins a *Week 7 Review Board* in Classroom; add your PR link. Then scroll the board and **take the oldest PR nobody has reviewed yet** — reply to claim it so two people don't double up. You are not assigned a partner and you do not wait to be given one: you take the PR that has been waiting longest. Most people end up swapping with whoever took theirs, which is fine.
+3. **No collaborator invitation is needed.** Your repo is public, so any GitHub account can comment on your diff and submit a review — approve or request changes — without being added to anything. Tell your reviewer by **@-mentioning them in a comment on the PR**; the *Reviewers* box only offers people you have added as collaborators, so the mention is what reaches them.
+4. **Review the PR you claimed:** *Files changed* → click the **+** beside a line to leave an **inline comment**. Use the checklist above. Leave at least three real ones — something to fix, a question, and something done well.
+5. **Submit it with your scores:** *Review changes* → paste the scorecard below into the summary box → **Request changes**. The summary carries your scores; the inline comments are where the review actually happens. One without the other is half a review.
+6. **Answer the review on your own PR:** push follow-up commits to the same branch (`Fix: rename vague variables from review`). Reply to each comment saying what you changed.
+7. Your reviewer re-reviews and **approves**. You merge.
+
+**The scorecard** — paste this into the review summary box in step 5 and fill it in. `0` absent · `1` poor · `2` passable · `3` good · `4` exemplary.
+
+```markdown
+## Peer review — @my-username reviewing @author-username
+
+| Area | /4 | Note |
+|---|---|---|
+| Code quality — names, no magic numbers, one job per function, nesting, duplication | | |
+| JavaScript — `const`/`let`, error handling, no unused variables, `===` | | |
+| DOM — cached queries, event delegation, listeners removed | | |
+| Async — errors handled, loading states, no unhandled rejections | | |
+| Style — formatting, indentation, comments that earn their place | | |
+| **Total** | **/20** | |
+
+**Fix first:**
+**Question:**
+**Done well:**
+```
+
+> **Why the author opens the PR:** GitHub only lets you comment on lines that the PR **changes**. A review PR that just adds a `REVIEW.md` can't put a single comment on your partner's actual code. The scorecard goes in the review summary for the same reason — it travels with the comments instead of replacing them.
 >
-> **Make it findable:** the PR you opened lives in your *partner's* repo, not yours. Link it in your own README under a **Collaboration** heading (`Reviewed: <PR URL>`), and link the PR your partner opened on your repo. B3 is marked from those two links, using the **Collaboration** template in the Submission Guidelines. A review the marker cannot find from your README is not marked.
+> **Your scores do not set anyone's grade.** They are feedback for the author. The instructor marks the review itself: the inline comments, whether your numbers match what the code actually does, and the commits the author pushed in reply. A row of 4s on code full of magic numbers counts against **you**, not them. A 2 with a reason is worth more to your partner than a 4.
+>
+> **Make it findable:** in your README's **Collaboration** section (template in the Submission Guidelines), link **the PR you opened** (your refactor) and **the review you wrote** — hover one of your inline comments → **…** → *Copy link*. B3 is marked from those two links only.
+>
+> **If nobody reviewed your PR,** you are still marked on the review you wrote — that half never depends on anyone else. Say so under *Collaboration* and name who went missing. It does not work the other way round: "nobody paired with me" is no reason to skip reviewing, because the board is the whole class and reviewing a public PR needs no permission.
 
 ---
 
@@ -836,11 +894,13 @@ Review your Weather Dashboard:
 - [ ] Organize code into logical modules
 - [ ] Follow clean code practices
 - [ ] Debug effectively with DevTools
-- [ ] Set up and use ESLint
+- [ ] Set up and use ESLint (`eslint.config.js`) — `npm run lint` is clean
 - [ ] Set up and use Prettier
-- [ ] Participate in code review
-- [ ] To-Do List with persistence complete
-- [ ] Shopping Cart complete
+- [ ] Unit tests pass with `npm test`
+- [ ] `node_modules/` is in `.gitignore` and not in the repo
+- [ ] Opened a PR and posted it on the Review Board; reviewed a classmate's PR inline with the scorecard; responded to the review of mine with commits
+- [ ] To-Do List with persistence, modules and tests complete (the deliverable)
+- [ ] Shopping Cart class build complete
 - [ ] All daily challenges complete
 
 **Milestone:** You write professional-quality JavaScript! ✨

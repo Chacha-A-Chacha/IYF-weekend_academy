@@ -34,7 +34,7 @@ Week 0 runs the week **before** Lesson 1 — one onboarding session, then self-p
 3. Profile README in a repo named exactly your username
 4. `{username}.github.io` live
 5. Markdown practice file
-6. Team repo with an instructor-assigned team of 2–3: one PR each, reviewed by a teammate, one resolved merge conflict
+6. Team repo with a team of 2–3 you form yourself on the Classroom board: one PR each, reviewed by a teammate, one resolved merge conflict
 7. Issues + project board, one issue closed via `Closes #n`
 
 **Deliverable:** Your GitHub profile URL, with your Pages site, Markdown file and team repo linked from it. Full tasks: [tasks/week-00-git-github](tasks/week-00-git-github/).
@@ -50,7 +50,7 @@ Have these ready **before** the first lesson so setup doesn't eat live time:
 - [ ] A **GitHub account** — the username you register in Week 0 is the one you keep all season
 - [ ] **Git** installed ([git-scm.com](https://git-scm.com/))
 - [ ] **VS Code** installed ([code.visualstudio.com](https://code.visualstudio.com/))
-- [ ] **Node.js LTS** (v20+) installed ([nodejs.org](https://nodejs.org/)) — first used in Week 7 (unit tests), then Weeks 8–12
+- [ ] **Node.js LTS, version 22 or 24** installed ([nodejs.org](https://nodejs.org/)) — first used in Week 7 (unit tests), then Weeks 8–12. Node 20 is too old for current Vitest and Vite
 - [ ] A modern browser (Chrome or Firefox) for DevTools
 - [ ] Hardware: any laptop that runs VS Code + a browser (4 GB RAM minimum, 8 GB comfortable)
 
@@ -114,12 +114,14 @@ Real teams build on GitHub, so collaboration is practiced **deliberately** and *
 | **Peer review** | Individual repos, but you review each other's pull requests | Week 7 |
 | **Team build** | One shared repo; feature branch + PR + review per person | Weeks 8–12 (CommunityHub) |
 
-**Who you work with.** Pairs for Weeks 3 and 7 are **assigned by the instructor** from the Week 0 registrations and posted in Classroom — by Week 2 for the pair lab, by Week 6 for peer review. You do not need to find a partner. Teams of 2–3 for Weeks 8–12 are **self-formed by the Week 8 kickoff deadline** (posted in Classroom); anyone unplaced by then is assigned. If an assigned partner never engages, say so in your README: you are marked on your own branch and PR, and the no-show carries the cost.
+**Who you work with.** **You find your own partners — nobody is assigned one.** For each collaborative week the instructor pins a **board** in Classroom and you claim your place on it: a *Team Board* for Week 0 (teams of 2–3, name your lead), a *Pair Board* for Week 3, a *Review Board* for Week 7 (post your pull request, then review the oldest one nobody has reviewed yet), and the *Team Board* again for the Weeks 8–12 teams by the Week 8 kickoff deadline. Claim early. If a deadline passes and no group has taken you, reply to the smallest group on the board — **a group of fewer than three must take anyone who asks.**
+
+> **You are never marked down because somebody else did not turn up.** Every collaborative week splits its collaboration marks between the half you control — the branch and pull request you push, the review you write on someone else's work — and the half that needs a second person. Do your half, link it in your README under *Collaboration*, and it is marked even if nobody reciprocated; name who went missing. What you cannot do is skip your half for want of a partner: your repositories are public, so **reviewing a classmate's pull request needs no invitation and no collaborator access** (Week 7).
 
 **Collaboration milestones:**
 - **Week 3 — Pair Collaboration Lab:** two students share one repo; each opens a feature branch + PR, reviews the other's PR, and resolves a deliberately-engineered merge conflict.
-- **Week 7 — Peer Code Review:** with your assigned partner, open a substantive review PR on each other's project; the author addresses feedback in follow-up commits.
-- **Week 8 — Team Setup:** teams of 2–3 are assigned; the lead creates the one CommunityHub repo (`iyf-s12-communityhub-team-{lead}`) that carries Weeks 8–12, enables branch protection, writes `CONTRIBUTORS.md`, and opens an issue per MVP feature. From Week 8 the team repo is what every member submits.
+- **Week 7 — Peer Code Review:** you open a PR of your own refactor, a classmate from the Review Board reviews it inline and submits a scored review, and you do the same on theirs; each author answers the feedback in follow-up commits.
+- **Week 8 — Team Setup:** teams of 2–3 form on the Team Board; the lead creates the one CommunityHub repo (`iyf-s12-communityhub-team-{lead}`) that carries Weeks 8–12, enables branch protection, writes `CONTRIBUTORS.md`, and opens an issue per MVP feature. From Week 8 the team repo is what every member submits.
 - **Weeks 8–12 — Feature Ownership:** every member owns ≥1 MVP feature end-to-end via branch → PR → teammate review → merge.
 
 > **All team contributions must be verifiable on GitHub** (PR authorship, reviews, issues, commit attribution). See [tasks/SUBMISSION_GUIDELINES.md](tasks/SUBMISSION_GUIDELINES.md) for the workflow and how instructors verify. **Daily challenges and skill-building projects stay solo.**
@@ -561,7 +563,7 @@ Real teams build on GitHub, so collaboration is practiced **deliberately** and *
 **Mini-Project:** 🏁 **CommunityHub frontend — start here** (convert your portfolio/profile into React components)
 **→ This IS the flagship:** every component you built in Weeks 1–8 now becomes part of CommunityHub.
 
-> **👥 Collaborative Task — Team Setup:** form your team of 2–3 by the kickoff deadline (unplaced students are assigned), create the one CommunityHub repo (`iyf-s12-communityhub-team-{lead}`) that you will submit every week from now to Week 12, enable branch protection on `main`, add `CONTRIBUTORS.md`, and open a GitHub issue for each MVP feature (profiles, posts, comments, auth). From here through Week 12, **every member owns ≥1 feature** via branch → PR → teammate review → merge.
+> **👥 Collaborative Task — Team Setup:** form your team of 2–3 on the Team Board by the kickoff deadline (not placed by then? join the smallest team — a team of fewer than three must take you), create the one CommunityHub repo (`iyf-s12-communityhub-team-{lead}`) that you will submit every week from now to Week 12, enable branch protection on `main`, add `CONTRIBUTORS.md`, and open a GitHub issue for each MVP feature (profiles, posts, comments, auth). From here through Week 12, **every member owns ≥1 feature** via branch → PR → teammate review → merge.
 
 ---
 

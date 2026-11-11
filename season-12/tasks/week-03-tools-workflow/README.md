@@ -445,9 +445,11 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 ### Collaborative Task: Pair Collaboration Lab 🔴
-**Time:** 60 minutes · 👥 With your assigned partner (posted in Classroom by Week 2)
+**Time:** 60 minutes · 👥 With a partner you find yourself
 
 Practice the real team workflow you'll use for CommunityHub — two people, one shared repo.
+
+**Finding your partner.** The instructor pins a *Week 3 Pair Board* in Classroom. Reply with your GitHub username, or reply to someone already asking — first to answer, pair made. Nobody is assigned a partner. If the deadline passes and you are still alone, join an existing pair as a third: **a pair must take a third member who asks**, and a trio does the same lab (three branches, three PRs, one conflict).
 
 **Setup:**
 1. One partner creates a repo `iyf-s12-week-03-pair-{lead-username}` and adds the other as a collaborator
@@ -468,7 +470,7 @@ Practice the real team workflow you'll use for CommunityHub — two people, one 
 
 **Deliverable:** a repo with **2 merged PRs** and **1 resolved merge conflict**, both partners showing under Insights → Contributors.
 
-**Submission:** you still submit your own `iyf-s12-week-03-{your-github-username}`. In its README, under a **Collaboration** heading (template in the [Submission Guidelines](../SUBMISSION_GUIDELINES.md)), link: your partner, the pair repo, **the PR you opened**, **the PR you reviewed**, and **the merge-conflict PR**. B3 is marked from those links only — the marker does not search the pair repo for you. If your partner never engaged, say so there: you are marked on your own branch and PR.
+**Submission:** you still submit your own `iyf-s12-week-03-{your-github-username}`. In its README, under a **Collaboration** heading (template in the [Submission Guidelines](../SUBMISSION_GUIDELINES.md)), link: your partner, the pair repo, **the PR you opened**, **the PR you reviewed**, and **the merge-conflict PR**. B3 is marked from those links only — the marker does not search the pair repo for you. If your partner never engaged, or no pair formed at all, say so there and name them: you are marked on your own branch and PR, and the missing half is not held against you.
 
 ---
 

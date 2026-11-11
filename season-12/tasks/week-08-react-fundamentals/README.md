@@ -22,7 +22,7 @@ This week you'll learn React - the most popular library for building user interf
 CommunityHub is a **team project** (2–3 people) built from this week through Week 12. Set up the team before you start coding.
 
 **One-time setup (do this first):**
-- [ ] Form a team of 2–3 **by the kickoff deadline posted in Classroom** — anyone unplaced by then is assigned to a team
+- [ ] Form a team of 2–3 on the *Team Board* **by the kickoff deadline posted in Classroom** — not placed by then? reply to the smallest team: a team of fewer than three must take anyone who asks
 - [ ] Team lead creates the team repo `iyf-s12-communityhub-team-{lead-username}` (the lead's username exactly as registered in Week 0) with a README and the **Node** `.gitignore` template, and adds members as collaborators — members **accept** the invitation. This one repo carries the whole flagship: `frontend/` from this week, `backend/` from Week 10.
 - [ ] Lead enables branch protection on `main` (require a PR + 1 approval) — see [Submission Guidelines](../SUBMISSION_GUIDELINES.md)
 - [ ] Add `CONTRIBUTORS.md` listing each member, their exact GitHub username, and their features
@@ -46,6 +46,8 @@ CommunityHub is a **team project** (2–3 people) built from this week through W
 ### Task 15.1: Setting Up React with Vite 🟢
 **Time:** 30 minutes
 
+**Before you start:** `node --version` must be **22 or higher** (Week 0). The current Vite template needs Node 22.12+ — on Node 20 `npm create vite` or `npm run dev` fails with an *unsupported engine* error.
+
 **Team lead — scaffold the frontend inside the team repo (once):**
 
 ```bash
@@ -61,6 +63,18 @@ npm install
 # Vite generates its own README.md — delete it. It is a placeholder,
 # and placeholders are penalised. The repo's README lives at the root.
 rm README.md
+
+# The template's App.jsx is a demo (logos, a counter, "Get started").
+# Replace it FIRST (it imports the demo images), then delete the images:
+cat > src/App.jsx <<'EOF'
+function App() {
+  return <h1>CommunityHub</h1>
+}
+
+export default App
+EOF
+rm -r src/assets
+npm run build    # must succeed — proves nothing still imports the deleted files
 cd ..
 
 # Commit on a branch and open a PR — the lead follows the same rules as everyone
@@ -81,6 +95,22 @@ npm run dev
 ```
 
 Then check **Insights → Contributors** after your first merged PR (see the kickoff).
+
+**What the template gives you** (Vite 8, React 19):
+- `npm run dev` — the dev server · `npm run build` — the production build (Week 12)
+- `npm run lint` — **oxlint**, a fast linter that does Week 7's ESLint job. Add the course rules to `frontend/.oxlintrc.json` so it checks what the marker checks:
+  ```json
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }],
+    "no-var": "error",
+    "eqeqeq": "error",
+    "prefer-const": "warn"
+  }
+  ```
+- `frontend/.gitignore` already lists `node_modules` — check `git status` anyway before every commit.
+
+**Bring your Week 7 tests:** in `frontend/`, `npm install --save-dev vitest`, then `npm pkg set scripts.test="vitest run"`. Pure helpers (sorting, searching, formatting posts) go in `src/utils/` with a `.test.js` file next to them — see the mini-project.
 
 **Explore the project structure:**
 ```
@@ -267,13 +297,13 @@ function PostList() {
             <PostCard 
                 title="Getting Started with React"
                 excerpt="Learn the basics of React..."
-                author="John Doe"
+                author="Amina Otieno"
                 date="Jan 15, 2026"
             />
             <PostCard 
                 title="JavaScript Best Practices"
                 excerpt="Write cleaner code..."
-                author="Jane Smith"
+                author="Brian Kamau"
                 date="Jan 10, 2026"
             />
         </div>
@@ -765,9 +795,9 @@ function PostCard({ post, onLike }) {
 
 **Build the basic structure of CommunityHub in React:**
 
-**Component Structure:**
+**Component Structure** (inside `frontend/`):
 ```
-src/
+frontend/src/
 ├── components/
 │   ├── Layout/
 │   │   ├── Header.jsx
@@ -784,6 +814,10 @@ src/
 │       ├── Button.jsx
 │       ├── Input.jsx
 │       └── Card.jsx
+├── utils/
+│   ├── posts.js           ← pure helpers: sortNewestFirst, searchPosts…
+│   └── posts.test.js      ← Week 7 habit: npm test passes
+├── exercises/{username}/  ← your lesson exercises (C1 is marked from here)
 ├── App.jsx
 └── main.jsx
 ```
@@ -811,6 +845,10 @@ src/
 5. **Footer Component**
    - Links
    - Copyright
+
+6. **Tested helpers**
+   - At least one pure helper in `src/utils/` used by the app (e.g. sort posts newest first, or search by title/author)
+   - At least 3 tests in a `.test.js` file next to it; `npm test` passes in `frontend/`
 
 **Bonus:**
 - Like/unlike posts

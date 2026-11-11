@@ -77,11 +77,13 @@ What did you learn while building this project?
 What problems did you encounter and how did you solve them?
 
 ## Collaboration (required in Weeks 0, 3 and 7; omit on other solo weeks)
-- **Team / partner:** [@partner](https://github.com/partner)
-- **Shared repo:** https://github.com/...
+- **Team / partner:** [@partner](https://github.com/partner) — found on the Classroom board
+- **Shared repo** (Weeks 0 and 3): https://github.com/...
 - **PR I opened:** https://github.com/.../pull/N
 - **PR I reviewed:** https://github.com/.../pull/N
+- **Review I wrote** (Week 7 — link one of your inline comments): https://github.com/.../pull/N#discussion_rNNNNN
 - **Merge conflict I resolved** (Weeks 0 and 3): https://github.com/.../pull/N
+- **Nobody turned up?** Say so here and name them. Your own half is still marked.
 (Collaboration happens outside this repository. It is marked **only** from these links — the marker does not search the shared repo for your work. Every link must point to something authored by your own GitHub account.)
 
 ## Screenshots (optional)
@@ -249,7 +251,7 @@ Docs: add installation instructions to README
 https://github.com/{your-username}/iyf-s12-week-XX-{your-username}
 ```
 
-On solo weeks the repository must be owned by **your** account — the one you registered in Week 0. On team weeks (8–12) every member submits the team repository URL individually; see [Team Projects](#team-projects---contributorsmd). On the pair weeks (3 and 7) you still submit your own repository — the pair repo or review PR is **linked from its README** under *Collaboration*, and is marked only from that link.
+On solo weeks the repository must be owned by **your** account — the one you registered in Week 0. On team weeks (8–12) every member submits the team repository URL individually; see [Team Projects](#team-projects---contributorsmd). On the pair weeks (3 and 7) you still submit your own repository — the pair repo or review PR is **linked from its README** under *Collaboration*, and is marked only from that link. You find your own partner on the week's Classroom board; in Week 7 no collaborator invitation is needed, because any account can review a pull request on a public repository.
 
 **What scores 0** — no exceptions, no chasing:
 - A file attachment instead of a link

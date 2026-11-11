@@ -237,6 +237,34 @@ student who cannot find one is penalised for a logistics gap.
 `MARKING_GUIDE.md` (B3, no-show rule).
 
 - [x] Applied — 2026-09-13
+- [!] **Superseded — 2026-11-11.** Assignment turned out not to be deliverable: the instructor
+  cannot pair students off the registrations. Keeping the promise in the documents was worse
+  than the original loophole, because the outline told students *"you do not need to find a
+  partner."*
+
+  **Replacement — self-selection on a board, and credit for the half you control.**
+  - A pinned Classroom **board** per collaborative week: *Team Board* (Weeks 0 and 8),
+    *Pair Board* (Week 3), *Review Board* (Week 7 — post your PR, claim the oldest
+    unreviewed one). Unmatched after the deadline: join the smallest group, and a group
+    of fewer than three must take anyone who asks. No instructor action, no list to publish.
+  - B3 now splits into the half a student controls (own branch, own PR, **the review they
+    wrote**) and the half needing a second person. The first is always markable, so a
+    missing partner can no longer cost marks — which is what assignment was for.
+  - Week 7 drops the collaborator-invite step: on a public repository **any account can
+    submit a review**, so a reviewer needs no access at all
+    ([GitHub docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-pull-request-reviews-in-your-repository)).
+    The *Reviewers* box still only offers collaborators, so the author @-mentions instead.
+  - Peer **scores** go in the review summary as a 5-area scorecard (/20), paste-ready in the
+    task. They are feedback, never a grade input: the instructor marks the review's substance,
+    and inline comments stay mandatory so the deleted-`REVIEW.md` failure does not return.
+
+  **Files.** `course_outline.md` · `MARKING_GUIDE.md` (B3 Week 7 check, unmatched rule,
+  Week 0 Collaboration) · `tasks/week-00-git-github/README.md` (0.6) ·
+  `tasks/week-03-tools-workflow/README.md` (pair lab) ·
+  `tasks/week-07-js-best-practices/README.md` (review process + scorecard) ·
+  `tasks/SUBMISSION_GUIDELINES.md` (Collaboration template) ·
+  `lesson-notes/week-03-tools-workflow/lesson-06-notes.md` ·
+  `lesson-notes/week-07-js-best-practices/lesson-14-notes.md`
 
 ---
 
