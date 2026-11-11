@@ -10,3 +10,6 @@
 # OS
 .DS_Store
 Thumbs.db
+
+# Instructor-private — submission audits (student repo data; never publish)
+/*.xlsx
